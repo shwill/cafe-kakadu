@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Café Kakadu — Offenburg</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#161311",
+            "on-primary-container": "#6d5000",
+            "primary": "#ffe2ab",
+            "secondary-fixed-dim": "#e1c1a4",
+            "surface-container-highest": "#393431",
+            "surface-tint": "#fbbc00",
+            "surface-container-high": "#2e2927",
+            "primary-fixed-dim": "#fbbc00",
+            "inverse-primary": "#795900",
+            "surface-dim": "#161311",
+            "tertiary-fixed": "#ffdbc9",
+            "on-surface-variant": "#d4c5ab",
+            "surface-container-lowest": "#110d0c",
+            "tertiary": "#ffdfcf",
+            "secondary": "#e1c1a4",
+            "secondary-container": "#59422c",
+            "surface-container": "#231f1d",
+            "on-primary": "#402d00",
+            "tertiary-container": "#ffba93",
+            "on-secondary-fixed-variant": "#59422c",
+            "surface": "#161311",
+            "on-background": "#eae1dd",
+            "on-error": "#690005",
+            "on-tertiary": "#532200",
+            "on-tertiary-fixed-variant": "#763400",
+            "on-secondary": "#402c18",
+            "error": "#ffb4ab",
+            "on-secondary-container": "#cfaf93",
+            "surface-bright": "#3d3836",
+            "on-surface": "#eae1dd",
+            "primary-container": "#ffbf00",
+            "on-tertiary-container": "#8b3e00",
+            "tertiary-fixed-dim": "#ffb68d",
+            "secondary-fixed": "#fedcbe",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed": "#291806",
+            "on-tertiary-fixed": "#321200",
+            "on-primary-fixed": "#261a00",
+            "outline-variant": "#504532",
+            "on-primary-fixed-variant": "#5c4300",
+            "error-container": "#93000a",
+            "inverse-surface": "#eae1dd",
+            "outline": "#9c8f78",
+            "inverse-on-surface": "#342f2d",
+            "primary-fixed": "#ffdfa0",
+            "surface-variant": "#393431",
+            "surface-container-low": "#1f1b19"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block; line-height: 1; text-transform: none;
+      letter-spacing: normal; word-wrap: normal; white-space: nowrap; direction: ltr;
+    }
+    body { background-color: #161311; color: #eae1dd; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary">
+
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-xl transition-colors duration-500">
+    <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+      <a href="#" class="text-2xl font-black tracking-tighter text-amber-500 font-headline uppercase">
+        Café Kakadu
+      </a>
+      <nav class="hidden md:flex gap-12 font-headline tracking-tight font-bold uppercase text-xs">
+        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#about">Über Uns</a>
+        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#menu">Getränke</a>
+        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#galerie">Galerie</a>
+        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#kontakt">Anfahrt</a>
+      </nav>
+      <div class="flex items-center gap-6">
+        <a href="tel:078176410" class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-[10px] tracking-widest px-6 py-3 rounded-full active:scale-95 transition-all">
+          0781 / 76410
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative min-h-screen overflow-hidden">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 px-8 max-w-screen-2xl mx-auto">
+      <div class="grid grid-cols-12 w-full gap-8 relative z-10">
+        <!-- Left Content Column -->
+        <div class="col-span-12 lg:col-span-6 flex flex-col justify-center order-2 lg:order-1 mt-12 lg:mt-0">
+          <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-6 block">Die Kunst des Genießens</span>
+          <h1 class="font-headline text-7xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter text-on-background mb-8">
+            CAFÉ<br/>
+            <span class="text-primary-container">KAKADU</span>
+          </h1>
+          <div class="flex flex-col md:flex-row md:items-end gap-8 mb-12">
+            <p class="font-headline text-2xl md:text-3xl italic text-on-surface-variant max-w-sm leading-tight">
+              Kaffee am Tag.<br/>Drinks bei Nacht.
+            </p>
+            <div class="h-[1px] w-24 bg-outline-variant/30 hidden md:block mb-4"></div>
+            <address class="not-italic font-label text-xs uppercase tracking-widest text-outline leading-loose">
+              Wasserstraße 1,<br/>77652 Offenburg
+            </address>
+          </div>
+          <div class="flex flex-wrap gap-6 items-center">
+            <a href="#menu" class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-sm tracking-widest px-10 py-5 rounded-full shadow-2xl shadow-amber-900/20 active:translate-y-1 transition-all">
+              Zur Karte
+            </a>
+            <a class="font-headline text-sm uppercase tracking-widest text-primary hover:text-white transition-colors group flex items-center gap-2" href="#kontakt">
+              Anfahrt
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+            </a>
+          </div>
+        </div>
+        <!-- Right Visual Column -->
+        <div class="col-span-12 lg:col-span-6 relative order-1 lg:order-2 h-[512px] lg:h-[819px]">
+          <div class="absolute inset-0 bg-surface-container-high rounded-lg overflow-hidden border border-primary/20">
+            <img alt="Café Kakadu Atmosphäre" class="w-full h-full object-fill grayscale-[0.2] contrast-125 opacity-80" src="images/gallery/gallery_001.jpg"/>
+          </div>
+        </div>
+      </div>
+      <!-- Background Decorative Elements -->
+      <div class="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-bl from-amber-500/5 to-transparent blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-stone-900/20 to-transparent blur-3xl pointer-events-none"></div>
+    </section>
+
+    <!-- Featured Bento Section -->
+    <section class="py-24 px-8 max-w-screen-2xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <div class="md:col-span-1 space-y-6">
+          <h3 class="font-headline text-4xl font-bold tracking-tighter uppercase leading-none">
+            Der Rhythmus<br/>Der Stadt
+          </h3>
+          <p class="text-on-surface-variant font-body leading-relaxed max-w-xs">
+            Von der ersten Röstung am Morgen bis zum letzten Negroni der Nacht. Wir feiern die Transition der Zeit.
+          </p>
+        </div>
+        <div class="md:col-span-2 grid grid-cols-2 gap-4">
+          <div class="bg-surface-container-low h-64 flex flex-col justify-end p-8 relative group overflow-hidden">
+            <div class="absolute inset-0 bg-stone-900/40 group-hover:bg-stone-900/20 transition-colors z-10"></div>
+            <img class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" alt="Kaffee am Tag" src="images/gallery/gallery_085.jpg"/>
+            <span class="relative z-20 font-headline font-bold uppercase tracking-widest text-primary text-xs">Kaffee & Kuchen</span>
+          </div>
+          <div class="bg-surface-container-low h-64 flex flex-col justify-end p-8 relative group overflow-hidden">
+            <div class="absolute inset-0 bg-stone-900/40 group-hover:bg-stone-900/20 transition-colors z-10"></div>
+            <img class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" alt="Drinks bei Nacht" src="images/gallery/gallery_048.jpg"/>
+            <span class="relative z-20 font-headline font-bold uppercase tracking-widest text-primary text-xs">Cocktails & Spirits</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Bar -->
+    <section id="about" class="px-8 max-w-screen-2xl mx-auto pb-24">
+      <div class="bg-surface-container-high rounded-xl p-10 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div class="text-center">
+          <div class="font-headline font-bold text-[10px] uppercase tracking-widest text-primary-container mb-3">To Go</div>
+          <div class="text-on-surface text-sm leading-relaxed">Espresso 1,50 €<br/>Café 2,00 €<br/>Cappuccino 2,50 €</div>
+        </div>
+        <div class="text-center">
+          <div class="font-headline font-bold text-[10px] uppercase tracking-widest text-primary-container mb-3">Panini</div>
+          <div class="text-on-surface text-sm leading-relaxed">Frisch &<br/>hausgemacht</div>
+        </div>
+        <div class="text-center">
+          <div class="font-headline font-bold text-[10px] uppercase tracking-widest text-primary-container mb-3">Hofeis</div>
+          <div class="text-on-surface text-sm leading-relaxed">Eis vom<br/>Mundenhof</div>
+        </div>
+        <div class="text-center">
+          <div class="font-headline font-bold text-[10px] uppercase tracking-widest text-primary-container mb-3">Suppen</div>
+          <div class="text-on-surface text-sm leading-relaxed">Frisch, bio,<br/>hausgemacht & vegan</div>
+        </div>
+        <div class="text-center">
+          <div class="font-headline font-bold text-[10px] uppercase tracking-widest text-primary-container mb-3">Kuchen</div>
+          <div class="text-on-surface text-sm leading-relaxed">Hausgemacht,<br/>meist auch vegan</div>
+        </div>
+      </div>
+
+      <!-- Bio Note -->
+      <div class="mt-12 grid grid-cols-12 gap-8 items-center">
+        <div class="col-span-12 md:col-span-7">
+          <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Über Uns</span>
+          <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-8">
+            Dein Wohnzimmer<br/><span class="text-primary-container">in der Stadt.</span>
+          </h2>
+          <p class="text-on-surface-variant leading-relaxed max-w-lg mb-4">
+            Wir verwenden ausschließlich <span class="text-primary font-semibold">Bio Vollmilch und Bio Hafermilch</span>.
+            Alle Getränke sind ohne Aufpreis auch mit Hafermilch erhältlich.
+          </p>
+          <p class="text-on-surface-variant leading-relaxed max-w-lg">
+            Unser Obst und Gemüse beziehen wir vom <span class="text-primary font-semibold">Demeter Bauernhof Witt</span> in Weier.
+            Frisch, regional, nachhaltig — so wie es sein sollte.
+          </p>
+        </div>
+        <div class="col-span-12 md:col-span-5 relative h-80 md:h-96">
+          <div class="absolute inset-4 bg-surface-container-high rounded-lg overflow-hidden">
+            <img src="images/gallery/gallery_032.jpg" alt="Café Kakadu" class="w-full h-full object-cover opacity-80"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getränkekarte -->
+    <section id="menu" class="py-24 px-8 max-w-screen-2xl mx-auto">
+      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Getränkekarte</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
+        Von Espresso<br/><span class="text-primary-container">bis Cuba Libre.</span>
+      </h2>
+      <!-- Filter Pills -->
+      <div class="flex flex-wrap gap-2 mb-12">
+        <button onclick="filterMenu(this,'all')" class="menu-pill active bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Alles</button>
+        <button onclick="filterMenu(this,'warme')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Warme Getränke</button>
+        <button onclick="filterMenu(this,'kalte')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Kalte Getränke</button>
+        <button onclick="filterMenu(this,'saefte')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Säfte</button>
+        <button onclick="filterMenu(this,'cocktails')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Cocktails</button>
+        <button onclick="filterMenu(this,'longdrinks')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Longdrinks</button>
+        <button onclick="filterMenu(this,'spirituosen')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Spirituosen</button>
+        <button onclick="filterMenu(this,'shots')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Shots</button>
+        <button onclick="filterMenu(this,'wein')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Wein</button>
+        <button onclick="filterMenu(this,'biere')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Biere</button>
+        <button onclick="filterMenu(this,'alkoholfrei')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Alkoholfrei</button>
+        <button onclick="filterMenu(this,'essen')" class="menu-pill bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Essen</button>
+      </div>
+
+      <style>
+        .menu-pill:not(.active):hover { background: #2e2927; color: #ffe2ab; }
+        .menu-cat { margin-bottom: 3rem; }
+        .menu-cat-title { font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 1.25rem; color: #ffbf00; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(80,69,50,0.2); }
+        .menu-cat-sub { font-family: 'Manrope', sans-serif; font-size: 0.7rem; color: #9c8f78; margin-bottom: 0.75rem; }
+        .menu-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.4rem 0; }
+        .menu-item { color: #eae1dd; font-size: 0.9rem; flex: 1; }
+        .menu-detail { color: #9c8f78; font-size: 0.75rem; }
+        .menu-price { color: #d4c5ab; font-size: 0.9rem; white-space: nowrap; margin-left: 1rem; }
+        .menu-note { color: #9c8f78; font-size: 0.75rem; font-style: italic; margin-top: 1.5rem; line-height: 1.6; }
+        .menu-grid { display: grid; grid-template-columns: 1fr repeat(3, 3.5rem); gap: 0; align-items: baseline; }
+        .menu-grid-header { display: contents; }
+        .menu-grid-header span { font-family: 'Manrope', sans-serif; font-size: 0.7rem; color: #9c8f78; text-align: right; padding-bottom: 0.75rem; }
+        .menu-grid-header span:first-child { text-align: left; }
+        .menu-grid-row { display: contents; }
+        .menu-grid-row .g-name { color: #eae1dd; font-size: 0.9rem; padding: 0.35rem 0; }
+        .menu-grid-row .g-price { color: #d4c5ab; font-size: 0.9rem; text-align: right; padding: 0.35rem 0; }
+        .menu-grid-row .g-price.empty { color: transparent; }
+        .menu-cat.hidden { display: none; }
+        @media (max-width: 640px) {
+          .menu-grid { grid-template-columns: 1fr repeat(3, 2.8rem); }
+          .menu-grid-row .g-name, .menu-grid-row .g-price { font-size: 0.8rem; }
+        }
+      </style>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
+
+        <!-- Warme Getränke -->
+        <div class="menu-cat" data-cat="warme">
+          <div class="menu-cat-title">Warme Getränke</div>
+          <div class="menu-row"><span class="menu-item">Café Lavazza</span><span class="menu-price">2,20</span></div>
+          <div class="menu-row"><span class="menu-item">Café, doppelt</span><span class="menu-price">3,80</span></div>
+          <div class="menu-row"><span class="menu-item">Espresso</span><span class="menu-price">1,90</span></div>
+          <div class="menu-row"><span class="menu-item">Espresso, doppelt</span><span class="menu-price">3,20</span></div>
+          <div class="menu-row"><span class="menu-item">Espresso Macchiato</span><span class="menu-price">2,20</span></div>
+          <div class="menu-row"><span class="menu-item">Milchcafé <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Milchcafé Schale <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">4,90</span></div>
+          <div class="menu-row"><span class="menu-item">Latte Macchiato <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Flavoured Latte Macchiato</span><span class="menu-price">3,60</span></div>
+          <div class="menu-detail" style="padding-left:0.25rem">(Caramel, Zimt, Vanille, Haselnuss, Kokos)</div>
+          <div class="menu-row"><span class="menu-item">Cappuccino <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,00</span></div>
+          <div class="menu-row"><span class="menu-item">Cappuccino groß <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,90</span></div>
+          <div class="menu-row"><span class="menu-item">Heiße Schokolade <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Kakao <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Ovomaltine <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Heiße Milch mit Honig <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Heiße Zitrone</span><span class="menu-price">3,10</span></div>
+          <div class="menu-row"><span class="menu-item">Heiße Zitrone mit Ingwer</span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Chai Latte</span><span class="menu-price">3,40</span></div>
+          <div class="menu-row"><span class="menu-item">Latte Macchiato Bailey's</span><span class="menu-price">5,60</span></div>
+          <div class="menu-row"><span class="menu-item">Irish Coffee</span><span class="menu-price">5,60</span></div>
+          <div class="menu-row"><span class="menu-item">Tee</span><span class="menu-price">2,70</span></div>
+          <div class="menu-row"><span class="menu-item">Tee Kanne</span><span class="menu-price">4,90</span></div>
+          <p class="menu-note">Alle milchhaltigen Getränke auch mit Bio Hafermilch erhältlich.</p>
+        </div>
+
+        <!-- Kalte Getränke -->
+        <div class="menu-cat" data-cat="kalte">
+          <div class="menu-cat-title">Kalte Getränke</div>
+          <div class="menu-grid">
+            <div class="menu-grid-header"><span></span><span>0,2l</span><span>0,3l</span><span>0,4l</span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-kola</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-kola ohne Zucker</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-limo Orange</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-mischmasch <span class="menu-detail">(Spezi)</span></span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-kola Zitrone</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-bio-Traubenschorle</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz-bio-Rhabarberschorle</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">fritz Apfel-Kirsch-Holunder</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Club-Mate</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Coca Cola</span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">3,30</span></div>
+            <div class="menu-grid-row"><span class="g-name">Ginger Ale</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Tonic Water</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price">3,30</span></div>
+            <div class="menu-grid-row"><span class="g-name">Bitter Lemon</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Spicy Ginger</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Orangina</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Red Bull</span><span class="g-price empty"></span><span class="g-price">3,50</span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Mineralwasser</span><span class="g-price">2,20</span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
+            <div class="menu-grid-row"><span class="g-name">Zitronenwasser <span class="menu-detail">(+ frischgepresste Zitrone)</span></span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">3,30</span></div>
+            <div class="menu-grid-row"><span class="g-name">Lebensquell still</span><span class="g-price">2,20</span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
+            <div class="menu-grid-row"><span class="g-name">Süßer Sprudel</span><span class="g-price">2,20</span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
+            <div class="menu-grid-row"><span class="g-name">Eistee Pfirsich</span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
+            <div class="menu-grid-row"><span class="g-name">Krug Eistee Pfirsich <span class="menu-detail">(ca. 0,75l)</span></span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">5,30</span></div>
+          </div>
+        </div>
+
+        <!-- Säfte -->
+        <div class="menu-cat" data-cat="saefte">
+          <div class="menu-cat-title">Säfte</div>
+          <div class="menu-grid" style="grid-template-columns: 1fr repeat(2, 3.5rem);">
+            <div class="menu-grid-header"><span></span><span>0,3l</span><span>0,4l</span></div>
+            <div class="menu-grid-row"><span class="g-name">Ananas Fruchtsaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Apfel Bio Naturtrüb</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Bananen Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Mango Fruchtsaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Kirsch Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Maracuja Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Pfirsich Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Johannisbeersaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Orange Bio Direktsaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
+            <div class="menu-grid-row"><span class="g-name">Saftschorle</span><span class="g-price">2,40</span><span class="g-price">3,10</span></div>
+          </div>
+        </div>
+
+        <!-- Cocktails -->
+        <div class="menu-cat" data-cat="cocktails">
+          <div class="menu-cat-title">Cocktails</div>
+          <div class="menu-row"><span class="menu-item">Cuba Libre</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Gimlet</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Caipirinha</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Caipirovka</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Memphis</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Moscow Mule</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Pina Colada</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Planter's Punch</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Tequila Sunrise</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Tom Cruise</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">White Russian</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Whiskey Sour</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Gin Fizz</span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Mojito <span class="menu-detail">(saisonabhängig)</span></span><span class="menu-price">7,40</span></div>
+          <div class="menu-row"><span class="menu-item">Long Island Iced Tea</span><span class="menu-price">9,00</span></div>
+          <div class="menu-row"><span class="menu-item">Hugo <span class="menu-detail">(saisonabhängig)</span></span><span class="menu-price">6,00</span></div>
+          <div class="menu-row"><span class="menu-item">Aperol Spritz</span><span class="menu-price">6,00</span></div>
+        </div>
+
+        <!-- Longdrinks -->
+        <div class="menu-cat" data-cat="longdrinks">
+          <div class="menu-cat-title">Longdrinks</div>
+          <div class="menu-row"><span class="menu-item">Havana Cola</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Gin Tonic</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Gin Tonic <span class="menu-detail">(Monkey Gin)</span></span><span class="menu-price">9,50</span></div>
+          <div class="menu-row"><span class="menu-item">Vodka Lemon</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Vodka Red Bull</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Malibu Maracuja</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Batida Kirsch</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Campari Orange</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Campari Soda</span><span class="menu-price">6,50</span></div>
+          <div class="menu-row"><span class="menu-item">Jack Daniel's Cola</span><span class="menu-price">7,50</span></div>
+          <div class="menu-row"><span class="menu-item">Longdrink Krug</span><span class="menu-price">20,00</span></div>
+          <div class="menu-row"><span class="menu-item">Jack Daniel's Cola Krug</span><span class="menu-price">22,00</span></div>
+          <div class="menu-row"><span class="menu-item">Cuba Libre Krug</span><span class="menu-price">22,00</span></div>
+          <div class="menu-row"><span class="menu-item">Krug Long Island Iced Tea</span><span class="menu-price">24,00</span></div>
+        </div>
+
+        <!-- Spirituosen -->
+        <div class="menu-cat" data-cat="spirituosen">
+          <div class="menu-cat-title">Spirituosen</div>
+          <div class="menu-cat-sub">4 cl</div>
+          <div class="menu-row"><span class="menu-item">Martini Bianco</span><span class="menu-price">4,00</span></div>
+          <div class="menu-row"><span class="menu-item">Martini D'Oro</span><span class="menu-price">4,00</span></div>
+          <div class="menu-row"><span class="menu-item">Campari</span><span class="menu-price">4,00</span></div>
+          <div class="menu-row"><span class="menu-item">Aperol</span><span class="menu-price">4,00</span></div>
+          <div class="menu-row"><span class="menu-item">Ramazzotti</span><span class="menu-price">4,00</span></div>
+          <div class="menu-row"><span class="menu-item">Ricard</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Bacardi Light Dry</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Havana 3 Jahre</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Havana 7 Jahre</span><span class="menu-price">6,00</span></div>
+          <div class="menu-row"><span class="menu-item">Myers's Rum</span><span class="menu-price">5,00</span></div>
+          <div class="menu-row"><span class="menu-item">Bailey's</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Malibu</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Batida de Coco</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Bombay Dry Gin</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Absolut Vodka</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Obstbrände</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Hennessy V.S.</span><span class="menu-price">5,00</span></div>
+          <div class="menu-row"><span class="menu-item">Four Roses Bourbon</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Glenfiddich Scotch</span><span class="menu-price">5,50</span></div>
+          <div class="menu-row"><span class="menu-item">Glenmorangie Scotch</span><span class="menu-price">7,00</span></div>
+          <div class="menu-row"><span class="menu-item">Jack Daniel's Bourbon</span><span class="menu-price">5,00</span></div>
+          <div class="menu-row"><span class="menu-item">Lagavulin 16 Jahre, Scotch</span><span class="menu-price">8,00</span></div>
+          <div class="menu-row"><span class="menu-item">Macallan 12 Jahre, Scotch</span><span class="menu-price">8,00</span></div>
+          <div class="menu-row"><span class="menu-item">Tullamore Dew Irish</span><span class="menu-price">5,00</span></div>
+        </div>
+
+        <!-- Shots -->
+        <div class="menu-cat" data-cat="shots">
+          <div class="menu-cat-title">Shots</div>
+          <div class="menu-cat-sub">2 cl</div>
+          <div class="menu-row"><span class="menu-item">Totengräber <span class="menu-detail">(Vodka und Zitrone)</span></span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Gimlet <span class="menu-detail">(Gin und Lime Juice)</span></span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Tequila</span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Vodka</span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Sambuca</span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Fernet Branca</span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Jägermeister</span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Saurer Joster</span><span class="menu-price">2,50</span></div>
+          <div class="menu-row"><span class="menu-item">Frangelico <span class="menu-detail">(Haselnusslikör)</span></span><span class="menu-price">2,50</span></div>
+        </div>
+
+        <!-- Wein / Prosecco -->
+        <div class="menu-cat" data-cat="wein">
+          <div class="menu-cat-title">Wein / Prosecco</div>
+          <div class="menu-grid" style="grid-template-columns: 1fr repeat(2, 3.5rem);">
+            <div class="menu-grid-header"><span></span><span>1/8l</span><span>1/4l</span></div>
+            <div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.5rem;">Weißwein (trocken)</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Riesling <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
+            <div class="menu-grid-row"><span class="g-name">Müller-Thurgau <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
+            <div class="menu-grid-row"><span class="g-name">Grauburgunder <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">3,30</span><span class="g-price">5,80</span></div>
+            <div class="menu-grid-row"><span class="g-name">Weinschorle <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price empty"></span><span class="g-price">3,20</span></div>
+            <div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.75rem;">Rotwein (trocken)</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Miedes <span class="menu-detail">(Spanien)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
+            <div class="menu-grid-row"><span class="g-name">Spätburgunder <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
+            <div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.75rem;">Rosé (trocken)</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Rosé <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
+          </div>
+          <div class="menu-detail" style="margin-top:1.25rem; margin-bottom:0.5rem; font-style:normal; text-transform:uppercase; letter-spacing:0.05em;">Secco / Sekt</div>
+          <div class="menu-row"><span class="menu-item">Secco, Glas <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="menu-price">3,50</span></div>
+          <div class="menu-row"><span class="menu-item">Secco Flasche 0,7l <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="menu-price">16,00</span></div>
+          <div class="menu-row"><span class="menu-item">Grauburgunder Winzersekt oder Rosésekt</span></div>
+          <div class="menu-row"><span class="menu-item" style="padding-left:1rem">Flasche 0,7l <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="menu-price">23,00</span></div>
+        </div>
+
+        <!-- Biere -->
+        <div class="menu-cat" data-cat="biere">
+          <div class="menu-cat-title">Biere vom Fass & Flasche</div>
+          <div class="menu-grid">
+            <div class="menu-grid-header"><span></span><span>0,2l</span><span>0,3l</span><span>0,5l</span></div>
+            <div class="menu-grid-row"><span class="g-name">Becks</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Lammsbräu Bio</span><span class="g-price">3,30</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Lammsbräu alkoholfrei Bio</span><span class="g-price">3,30</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Wulle</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Jever</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Jever fun alkoholfrei</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Tannenzäpfle</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Ulmer</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Astra</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(Diplom Pils)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(hell)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(naturtrüb)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(naturtrüb, dunkel)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+            <div class="menu-grid-row"><span class="g-name">Waldhaus Naturradler</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
+          </div>
+          <div class="menu-cat-sub" style="margin-top:1.5rem; margin-bottom:0.5rem; font-style:normal; text-transform:uppercase; letter-spacing:0.05em; color:#ffbf00; font-family:'Epilogue'; font-weight:700;">Weizenbier</div>
+          <div class="menu-row"><span class="menu-item">Hefe Weizen Hell <span class="menu-detail">(Waldhaus)</span></span><span class="menu-price">3,90</span></div>
+          <div class="menu-row"><span class="menu-item">Hefe Weizen Hell a.f. <span class="menu-detail">(Erdinger)</span></span><span class="menu-price">3,90</span></div>
+          <div class="menu-row"><span class="menu-item">Kristall Weizen Hell <span class="menu-detail">(Maisel's)</span></span><span class="menu-price">3,90</span></div>
+          <div class="menu-row"><span class="menu-item">Cola Weizen</span><span class="menu-price">4,10</span></div>
+          <div class="menu-row"><span class="menu-item">Saft Weizen</span><span class="menu-price">4,10</span></div>
+        </div>
+
+        <!-- Alkoholfrei (Cocktails) -->
+        <div class="menu-cat" data-cat="alkoholfrei">
+          <div class="menu-cat-title">Alkoholfreie Cocktails</div>
+          <div class="menu-row"><span class="menu-item">Fruchtmix</span><span class="menu-price">4,60</span></div>
+          <div class="menu-row"><span class="menu-item">Red Lounge</span><span class="menu-price">4,60</span></div>
+          <div class="menu-row"><span class="menu-item">Sara</span><span class="menu-price">4,60</span></div>
+          <div class="menu-row"><span class="menu-item">Virgin Colada</span><span class="menu-price">4,60</span></div>
+        </div>
+
+        <!-- Essen -->
+        <div class="menu-cat" data-cat="essen">
+          <div class="menu-cat-title">Essen</div>
+          <div class="menu-row"><span class="menu-item">Hausgemachte Panini</span><span class="menu-price">5,00</span></div>
+          <div class="menu-row"><span class="menu-item">Hausgemachte Tagessuppe <span class="menu-detail">(Bio & vegan)</span></span><span class="menu-price">5,00</span></div>
+          <div class="menu-row"><span class="menu-item">Baguettes: Schinken, Salami o. Käse</span><span class="menu-price">4,50</span></div>
+          <div class="menu-row"><span class="menu-item">Kuchen <span class="menu-detail">(meist hausgemacht)</span></span><span class="menu-price">3,50</span></div>
+          <div class="menu-row"><span class="menu-item">Butterbrezel, Croissant</span><span class="menu-price">1,50</span></div>
+          <div class="menu-row"><span class="menu-item">Croissant</span><span class="menu-price">1,50</span></div>
+          <div class="menu-row"><span class="menu-item">Mini Schokokissen <span class="menu-detail">(2 Stück)</span></span><span class="menu-price">1,50</span></div>
+          <div class="menu-row"><span class="menu-item">Hofeis <span class="menu-detail">(Mundenhof Freiburg / Saisonbed.)</span></span><span class="menu-price">2,50</span></div>
+        </div>
+
+      </div>
+
+      <script>
+        function filterMenu(btn, cat) {
+          document.querySelectorAll('.menu-pill').forEach(p => {
+            p.classList.remove('active');
+            p.className = p.className.replace('bg-gradient-to-br from-primary to-primary-container text-on-primary', 'bg-surface-container-high text-on-surface-variant');
+          });
+          btn.classList.add('active');
+          btn.className = btn.className.replace('bg-surface-container-high text-on-surface-variant', 'bg-gradient-to-br from-primary to-primary-container text-on-primary');
+          document.querySelectorAll('.menu-cat[data-cat]').forEach(el => {
+            el.classList.toggle('hidden', cat !== 'all' && el.dataset.cat !== cat);
+          });
+        }
+      </script>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="py-24 px-8 max-w-screen-2xl mx-auto">
+      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Galerie</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
+        Einblicke.
+      </h2>
+      <div class="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3" id="gallery-grid"></div>
+      <script>
+        (function() {
+          const grid = document.getElementById('gallery-grid');
+          const total = 158;
+          for (let i = 1; i <= total; i++) {
+            const num = String(i).padStart(3, '0');
+            const div = document.createElement('div');
+            div.className = 'rounded-xl overflow-hidden group break-inside-avoid';
+            const img = document.createElement('img');
+            img.src = 'images/gallery/gallery_' + num + '.jpg';
+            img.alt = 'Café Kakadu';
+            img.className = 'w-full object-cover group-hover:scale-105 transition-transform duration-700';
+            img.loading = 'lazy';
+            div.appendChild(img);
+            grid.appendChild(div);
+          }
+        })();
+      </script>
+    </section>
+
+    <!-- Anfahrt & Kontakt -->
+    <section id="kontakt" class="py-24 px-8 max-w-screen-2xl mx-auto">
+      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Anfahrt & Kontakt</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
+        Komm vorbei.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <div class="space-y-6">
+            <div class="flex justify-between items-baseline pb-6" style="border-bottom: 1px solid rgba(80,69,50,0.15)">
+              <span class="font-headline font-bold text-on-surface">Montag – Donnerstag</span>
+              <span class="text-on-surface-variant">9:00 – 0:00 Uhr</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-6" style="border-bottom: 1px solid rgba(80,69,50,0.15)">
+              <span class="font-headline font-bold text-on-surface">Freitag & Samstag</span>
+              <span class="text-on-surface-variant">9:00 – 2:00 Uhr</span>
+            </div>
+            <div class="flex justify-between items-baseline pb-6">
+              <span class="font-headline font-bold text-on-surface">Sonn- & Feiertage</span>
+              <span class="text-on-surface-variant">14:00 – 0:00 Uhr</span>
+            </div>
+          </div>
+          <div class="mt-10 space-y-3 text-on-surface-variant">
+            <p>Wasserstraße 1, 77652 Offenburg</p>
+            <p>Tel: <a href="tel:078176410" class="text-primary hover:underline">0781 / 76410</a></p>
+            <p>Inhaber: Sebastian Mußler</p>
+            <a href="https://www.facebook.com/cafekakadu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors mt-4 font-headline font-bold uppercase text-sm tracking-widest group">
+              Facebook
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+            </a>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden bg-surface-container" style="filter: grayscale(0.5) brightness(0.8) contrast(1.1)">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641.5!2d7.942343!3d48.47174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4790a4d7c5e2b7a7%3A0x0!2sWasserstra%C3%9Fe+1%2C+77652+Offenburg!5e0!3m2!1sde!2sde!4v1"
+            class="w-full h-full min-h-[400px] border-none"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full py-12 px-8 bg-surface-container-lowest">
+    <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="font-label text-xs uppercase tracking-widest text-outline">
+        © 2025 Café Kakadu · Wasserstraße 1, Offenburg
+      </div>
+      <div class="flex gap-8">
+        <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-amber-200 transition-all opacity-80 hover:opacity-100 cursor-pointer" href="https://www.facebook.com/cafekakadu" target="_blank" rel="noopener">Facebook</a>
+        <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-amber-200 transition-all opacity-80 hover:opacity-100 cursor-pointer" onclick="document.getElementById('modal-impressum').classList.add('open')">Impressum</a>
+        <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-amber-200 transition-all opacity-80 hover:opacity-100 cursor-pointer" onclick="document.getElementById('modal-datenschutz').classList.add('open')">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Styles -->
+  <style>
+    .legal-modal { position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:2rem; }
+    .legal-modal.open { display:flex; }
+    .legal-modal .backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); }
+    .legal-modal .modal-body { position:relative; background:#1f1b19; border-radius:0.75rem; max-width:720px; width:100%; max-height:85vh; overflow-y:auto; padding:3rem; }
+    .legal-modal .modal-body h2 { font-family:'Epilogue',sans-serif; font-weight:800; font-size:1.5rem; color:#ffbf00; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:1.5rem; }
+    .legal-modal .modal-body h3 { color:#eae1dd; font-weight:600; font-size:0.9rem; margin-top:1.5rem; margin-bottom:0.5rem; }
+    .legal-modal .modal-body p { color:#9c8f78; font-size:0.8rem; line-height:1.8; margin-bottom:0.75rem; }
+    .legal-modal .close-btn { position:absolute; top:1rem; right:1rem; color:#9c8f78; cursor:pointer; transition:color 0.2s; z-index:10; background:none; border:none; font-size:1.5rem; padding:0.5rem; line-height:1; }
+    .legal-modal .close-btn:hover { color:#ffe2ab; }
+  </style>
+
+  <!-- Impressum Modal -->
+  <div id="modal-impressum" class="legal-modal" onclick="if(event.target===this||event.target.classList.contains('backdrop'))this.classList.remove('open')">
+    <div class="backdrop"></div>
+    <div class="modal-body">
+      <button class="close-btn" onclick="event.stopPropagation();document.getElementById('modal-impressum').classList.remove('open')" type="button">&times;</button>
+      <h2>Impressum</h2>
+      <p><strong style="color:#eae1dd">Café Kakadu</strong><br/>Sebastian Mußler<br/>Wasserstraße 1<br/>77652 Offenburg<br/>Tel: 0781 / 76410</p>
+
+      <h2 style="margin-top:2rem">Haftungsausschluss</h2>
+
+      <h3>1. Inhalt des Onlineangebotes</h3>
+      <p>Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+
+      <h3>2. Verweise und Links</h3>
+      <p>Bei direkten oder indirekten Verweisen auf fremde Webseiten ("Hyperlinks"), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der verlinkten/verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich hiermit ausdrücklich von allen Inhalten aller verlinkten/verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor eingerichteten Gästebüchern, Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige Veröffentlichung lediglich verweist.</p>
+
+      <h3>3. Urheber- und Kennzeichenrecht</h3>
+      <p>Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind! Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
+
+      <h3>4. Rechtswirksamkeit dieses Haftungsausschlusses</h3>
+      <p>Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.</p>
+    </div>
+  </div>
+
+  <!-- Datenschutz Modal -->
+  <div id="modal-datenschutz" class="legal-modal" onclick="if(event.target===this||event.target.classList.contains('backdrop'))this.classList.remove('open')">
+    <div class="backdrop"></div>
+    <div class="modal-body">
+      <button class="close-btn" onclick="event.stopPropagation();document.getElementById('modal-datenschutz').classList.remove('open')" type="button">&times;</button>
+      <h2>Datenschutzerklärung</h2>
+
+      <h3>1. Verantwortlicher</h3>
+      <p>Sebastian Mußler · Wasserstraße 1, 77652 Offenburg · Tel: 0781 / 76410</p>
+
+      <h3>2. Allgemeines zur Datenverarbeitung</h3>
+      <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre personenbezogenen Daten im Einklang mit den geltenden datenschutzrechtlichen Bestimmungen, insbesondere der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Diese Datenschutzerklärung informiert Sie darüber, in welcher Art, in welchem Umfang und zu welchem Zweck personenbezogene Daten erhoben und verwendet werden.</p>
+
+      <h3>3. Erhebung und Speicherung personenbezogener Daten</h3>
+      <p>Beim Besuch unserer Website werden durch den Browser automatisch Informationen an den Server unserer Website gesendet. Diese Informationen werden temporär in einem sogenannten Logfile gespeichert. Folgende Informationen werden dabei ohne Ihr Zutun erfasst und bis zur automatisierten Löschung gespeichert:</p>
+      <p>– IP-Adresse des anfragenden Rechners<br/>– Datum und Uhrzeit des Zugriffs<br/>– Name und URL der abgerufenen Datei<br/>– Website, von der aus der Zugriff erfolgt (Referrer-URL)<br/>– Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers</p>
+      <p>Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. f DSGVO. Unser berechtigtes Interesse folgt aus den oben aufgelisteten Zwecken zur Datenerhebung: Gewährleistung eines reibungslosen Verbindungsaufbaus der Website, Gewährleistung einer komfortablen Nutzung unserer Website, Auswertung der Systemsicherheit und -stabilität sowie zu weiteren administrativen Zwecken.</p>
+
+      <h3>4. Weitergabe von Daten</h3>
+      <p>Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den im Folgenden aufgeführten Zwecken findet nicht statt. Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche Einwilligung dazu erteilt haben, die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. f DSGVO zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist, oder für den Fall, dass für die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. c DSGVO eine gesetzliche Verpflichtung besteht.</p>
+
+      <h3>5. Google Maps</h3>
+      <p>Diese Website nutzt Google Maps zur Darstellung von Karten. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Beim Aufruf einer Seite mit Google Maps wird eine Verbindung zu den Servern von Google hergestellt. Dabei wird dem Google-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Zudem wird Ihre IP-Adresse an Google übermittelt. Dies erfolgt unabhängig davon, ob Google ein Nutzerkonto bereitstellt, über das Sie eingeloggt sind, oder ob kein Nutzerkonto besteht. Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unseres Standorts. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:#ffe2ab">https://policies.google.com/privacy</a></p>
+
+      <h3>6. Google Fonts</h3>
+      <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten sogenannte Google Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Fonts in Ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse unsere Website aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+      <h3>7. Cookies</h3>
+      <p>Unsere Website verwendet keine Cookies und setzt keine Tracking-Technologien ein.</p>
+
+      <h3>8. Social Media (Facebook)</h3>
+      <p>Auf unserer Website befinden sich Links zu unserem Facebook-Profil. Es handelt sich um einfache Verlinkungen, die keine Daten an Facebook übermitteln, solange Sie nicht aktiv auf den Link klicken. Erst mit dem Klick werden Sie auf die externe Facebook-Seite weitergeleitet, wo die Datenschutzbestimmungen von Meta Platforms Ireland Ltd. gelten.</p>
+
+      <h3>9. Ihre Rechte</h3>
+      <p>Sie haben gemäß DSGVO folgende Rechte:</p>
+      <p>– <strong style="color:#eae1dd">Auskunft</strong> (Art. 15 DSGVO): Sie können Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten verlangen.<br/>– <strong style="color:#eae1dd">Berichtigung</strong> (Art. 16 DSGVO): Sie können die Berichtigung unrichtiger oder die Vervollständigung Ihrer bei uns gespeicherten personenbezogenen Daten verlangen.<br/>– <strong style="color:#eae1dd">Löschung</strong> (Art. 17 DSGVO): Sie können die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten verlangen, soweit die Verarbeitung nicht zur Ausübung des Rechts auf freie Meinungsäußerung, zur Erfüllung einer rechtlichen Verpflichtung oder aus Gründen des öffentlichen Interesses erforderlich ist.<br/>– <strong style="color:#eae1dd">Einschränkung</strong> (Art. 18 DSGVO): Sie können die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten verlangen.<br/>– <strong style="color:#eae1dd">Datenübertragbarkeit</strong> (Art. 20 DSGVO): Sie können verlangen, Ihre personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.<br/>– <strong style="color:#eae1dd">Widerspruch</strong> (Art. 21 DSGVO): Sie können jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einlegen.</p>
+
+      <h3>10. Beschwerderecht bei einer Aufsichtsbehörde</h3>
+      <p>Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen das Recht auf Beschwerde bei einer Aufsichtsbehörde zu, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt. Zuständige Aufsichtsbehörde ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg.</p>
+
+      <h3>11. Aktualität und Änderung dieser Datenschutzerklärung</h3>
+      <p>Diese Datenschutzerklärung hat den Stand März 2025. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.</p>
+    </div>
+  </div>
+
+</body>
+</html>
