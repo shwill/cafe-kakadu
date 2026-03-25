@@ -93,9 +93,9 @@
       </a>
       <nav class="hidden md:flex gap-12 font-headline tracking-tight font-bold uppercase text-xs">
         <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#about">Über Uns</a>
-        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#menu">Getränke</a>
-        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#galerie">Galerie</a>
+        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#menu">Karte</a>
         <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#kontakt">Anfahrt</a>
+        <a class="text-stone-300 hover:text-amber-300 transition-all duration-300 active:scale-95" href="#galerie">Galerie</a>
       </nav>
       <div class="flex items-center gap-6">
         <a href="tel:078176410" class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-[10px] tracking-widest px-6 py-3 rounded-full active:scale-95 transition-all">
@@ -225,7 +225,7 @@
 
     <!-- Getränkekarte -->
     <section id="menu" class="py-24 px-8 max-w-screen-2xl mx-auto">
-      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Getränkekarte</span>
+      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Karte</span>
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
         Von Espresso<br/><span class="text-primary-container">bis Cuba Libre.</span>
       </h2>
@@ -246,7 +246,29 @@
       </div>
 
       <style>
-        .menu-pill:not(.active):hover { background: #2e2927; color: #ffe2ab; }
+        .ken-burns {
+      transform: scale(1.15);
+      transform-origin: center center;
+      transition: transform 8s ease-out, transform-origin 8s ease-out;
+    }
+    .group:hover .ken-burns {
+      transform: scale(1.25) translate(-3%, -2%);
+      transform-origin: 30% 20%;
+    }
+    .group:nth-child(2n):hover .ken-burns {
+      transform: scale(1.25) translate(3%, -2%);
+      transform-origin: 70% 30%;
+    }
+    .group:nth-child(3n):hover .ken-burns {
+      transform: scale(1.25) translate(-2%, 3%);
+      transform-origin: 40% 70%;
+    }
+    .group:nth-child(5n):hover .ken-burns {
+      transform: scale(1.2) translate(2%, 2%);
+      transform-origin: 60% 60%;
+    }
+
+    .menu-pill:not(.active):hover { background: #2e2927; color: #ffe2ab; }
         .menu-cat { margin-bottom: 3rem; }
         .menu-cat-title { font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 1.25rem; color: #ffbf00; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(80,69,50,0.2); }
         .menu-cat-sub { font-family: 'Manrope', sans-serif; font-size: 0.7rem; color: #9c8f78; margin-bottom: 0.75rem; }
@@ -525,33 +547,6 @@
       </script>
     </section>
 
-    <!-- Galerie -->
-    <section id="galerie" class="py-24 px-8 max-w-screen-2xl mx-auto">
-      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Galerie</span>
-      <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
-        Einblicke.
-      </h2>
-      <div class="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3" id="gallery-grid"></div>
-      <script>
-        (function() {
-          const grid = document.getElementById('gallery-grid');
-          const total = 158;
-          for (let i = 1; i <= total; i++) {
-            const num = String(i).padStart(3, '0');
-            const div = document.createElement('div');
-            div.className = 'rounded-xl overflow-hidden group break-inside-avoid';
-            const img = document.createElement('img');
-            img.src = 'images/gallery/gallery_' + num + '.jpg';
-            img.alt = 'Café Kakadu';
-            img.className = 'w-full object-cover group-hover:scale-105 transition-transform duration-700';
-            img.loading = 'lazy';
-            div.appendChild(img);
-            grid.appendChild(div);
-          }
-        })();
-      </script>
-    </section>
-
     <!-- Anfahrt & Kontakt -->
     <section id="kontakt" class="py-24 px-8 max-w-screen-2xl mx-auto">
       <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Anfahrt & Kontakt</span>
@@ -594,6 +589,33 @@
           </iframe>
         </div>
       </div>
+    </section>
+
+    <!-- Galerie -->
+    <section id="galerie" class="py-24 px-8 max-w-screen-2xl mx-auto">
+      <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Galerie</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
+        Einblicke.
+      </h2>
+      <div class="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3" id="gallery-grid"></div>
+      <script>
+        (function() {
+          const grid = document.getElementById('gallery-grid');
+          const total = 158;
+          for (let i = 1; i <= total; i++) {
+            const num = String(i).padStart(3, '0');
+            const div = document.createElement('div');
+            div.className = 'rounded-xl overflow-hidden group break-inside-avoid';
+            const img = document.createElement('img');
+            img.src = 'images/gallery/gallery_' + num + '.jpg';
+            img.alt = 'Café Kakadu';
+            img.className = 'w-full object-cover ken-burns';
+            img.loading = 'lazy';
+            div.appendChild(img);
+            grid.appendChild(div);
+          }
+        })();
+      </script>
     </section>
 
   </main>
