@@ -1,0 +1,38 @@
+name: Build gallery & menu
+on:
+  push:
+    paths:
+      - 'images/gallery/**'
+      - 'data/menu.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml pillow
+          sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Run build
+        run: bash build.sh
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/menu.json data/gallery.json images/gallery/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: auto-generate menu.json and gallery.json"
+            git push
+          fi

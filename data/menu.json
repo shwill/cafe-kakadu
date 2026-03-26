@@ -1,0 +1,1003 @@
+[
+  {
+    "id": "warme",
+    "title": "Warme Getränke",
+    "type": "simple",
+    "note": "Alle milchhaltigen Getränke auch mit Bio Hafermilch erhältlich.",
+    "items": [
+      {
+        "name": "Café Lavazza",
+        "price": "2,20"
+      },
+      {
+        "name": "Café, doppelt",
+        "price": "3,80"
+      },
+      {
+        "name": "Espresso",
+        "price": "1,90"
+      },
+      {
+        "name": "Espresso, doppelt",
+        "price": "3,20"
+      },
+      {
+        "name": "Espresso Macchiato",
+        "price": "2,20"
+      },
+      {
+        "name": "Milchcafé",
+        "detail": "Bio Vollmilch",
+        "price": "3,40"
+      },
+      {
+        "name": "Milchcafé Schale",
+        "detail": "Bio Vollmilch",
+        "price": "4,90"
+      },
+      {
+        "name": "Latte Macchiato",
+        "detail": "Bio Vollmilch",
+        "price": "3,40"
+      },
+      {
+        "name": "Flavoured Latte Macchiato",
+        "price": "3,60",
+        "detail": "Caramel, Zimt, Vanille, Haselnuss, Kokos"
+      },
+      {
+        "name": "Cappuccino",
+        "detail": "Bio Vollmilch",
+        "price": "3,00"
+      },
+      {
+        "name": "Cappuccino groß",
+        "detail": "Bio Vollmilch",
+        "price": "3,90"
+      },
+      {
+        "name": "Heiße Schokolade",
+        "detail": "Bio Vollmilch",
+        "price": "3,40"
+      },
+      {
+        "name": "Kakao",
+        "detail": "Bio Vollmilch",
+        "price": "3,40"
+      },
+      {
+        "name": "Ovomaltine",
+        "detail": "Bio Vollmilch",
+        "price": "3,40"
+      },
+      {
+        "name": "Heiße Milch mit Honig",
+        "detail": "Bio Vollmilch",
+        "price": "3,40"
+      },
+      {
+        "name": "Heiße Zitrone",
+        "price": "3,10"
+      },
+      {
+        "name": "Heiße Zitrone mit Ingwer",
+        "price": "3,40"
+      },
+      {
+        "name": "Chai Latte",
+        "price": "3,40"
+      },
+      {
+        "name": "Latte Macchiato Bailey's",
+        "price": "5,60"
+      },
+      {
+        "name": "Irish Coffee",
+        "price": "5,60"
+      },
+      {
+        "name": "Tee",
+        "price": "2,70"
+      },
+      {
+        "name": "Tee Kanne",
+        "price": "4,90"
+      }
+    ]
+  },
+  {
+    "id": "kalte",
+    "title": "Kalte Getränke",
+    "type": "grid",
+    "columns": [
+      "0,2l",
+      "0,3l",
+      "0,4l"
+    ],
+    "items": [
+      {
+        "name": "fritz-kola",
+        "prices": [
+          null,
+          "2,80",
+          null
+        ]
+      },
+      {
+        "name": "fritz-kola ohne Zucker",
+        "prices": [
+          null,
+          "2,80",
+          null
+        ]
+      },
+      {
+        "name": "fritz-limo Orange",
+        "prices": [
+          null,
+          "2,80",
+          null
+        ]
+      },
+      {
+        "name": "fritz-mischmasch",
+        "detail": "Spezi",
+        "prices": [
+          null,
+          "2,80",
+          null
+        ]
+      },
+      {
+        "name": "fritz-kola Zitrone",
+        "prices": [
+          null,
+          "3,00",
+          null
+        ]
+      },
+      {
+        "name": "fritz-bio-Traubenschorle",
+        "prices": [
+          null,
+          "3,00",
+          null
+        ]
+      },
+      {
+        "name": "fritz-bio-Rhabarberschorle",
+        "prices": [
+          null,
+          "3,00",
+          null
+        ]
+      },
+      {
+        "name": "fritz Apfel-Kirsch-Holunder",
+        "prices": [
+          null,
+          "3,00",
+          null
+        ]
+      },
+      {
+        "name": "Club-Mate",
+        "prices": [
+          null,
+          "3,00",
+          null
+        ]
+      },
+      {
+        "name": "Coca Cola",
+        "prices": [
+          null,
+          null,
+          "3,30"
+        ]
+      },
+      {
+        "name": "Ginger Ale",
+        "prices": [
+          "2,80",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Tonic Water",
+        "prices": [
+          null,
+          "2,80",
+          "3,30"
+        ]
+      },
+      {
+        "name": "Bitter Lemon",
+        "prices": [
+          "2,80",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Spicy Ginger",
+        "prices": [
+          "2,80",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Orangina",
+        "prices": [
+          "2,80",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Red Bull",
+        "prices": [
+          null,
+          "3,50",
+          null
+        ]
+      },
+      {
+        "name": "Mineralwasser",
+        "prices": [
+          "2,20",
+          null,
+          "2,60"
+        ]
+      },
+      {
+        "name": "Zitronenwasser",
+        "detail": "+ frischgepresste Zitrone",
+        "prices": [
+          null,
+          null,
+          "3,30"
+        ]
+      },
+      {
+        "name": "Lebensquell still",
+        "prices": [
+          "2,20",
+          null,
+          "2,60"
+        ]
+      },
+      {
+        "name": "Süßer Sprudel",
+        "prices": [
+          "2,20",
+          null,
+          "2,60"
+        ]
+      },
+      {
+        "name": "Eistee Pfirsich",
+        "prices": [
+          null,
+          null,
+          "2,60"
+        ]
+      },
+      {
+        "name": "Krug Eistee Pfirsich",
+        "detail": "ca. 0,75l",
+        "prices": [
+          null,
+          null,
+          "5,30"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "saefte",
+    "title": "Säfte",
+    "type": "grid",
+    "columns": [
+      "0,3l",
+      "0,4l"
+    ],
+    "items": [
+      {
+        "name": "Ananas Fruchtsaft",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Apfel Bio Naturtrüb",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Bananen Nektar",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Mango Fruchtsaft",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Kirsch Nektar",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Maracuja Nektar",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Pfirsich Nektar",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Johannisbeersaft",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Orange Bio Direktsaft",
+        "prices": [
+          "2,60",
+          "3,50"
+        ]
+      },
+      {
+        "name": "Saftschorle",
+        "prices": [
+          "2,40",
+          "3,10"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cocktails",
+    "title": "Cocktails",
+    "type": "simple",
+    "items": [
+      {
+        "name": "Cuba Libre",
+        "price": "7,40"
+      },
+      {
+        "name": "Gimlet",
+        "price": "7,40"
+      },
+      {
+        "name": "Caipirinha",
+        "price": "7,40"
+      },
+      {
+        "name": "Caipirovka",
+        "price": "7,40"
+      },
+      {
+        "name": "Memphis",
+        "price": "7,40"
+      },
+      {
+        "name": "Moscow Mule",
+        "price": "7,40"
+      },
+      {
+        "name": "Pina Colada",
+        "price": "7,40"
+      },
+      {
+        "name": "Planter's Punch",
+        "price": "7,40"
+      },
+      {
+        "name": "Tequila Sunrise",
+        "price": "7,40"
+      },
+      {
+        "name": "Tom Cruise",
+        "price": "7,40"
+      },
+      {
+        "name": "White Russian",
+        "price": "7,40"
+      },
+      {
+        "name": "Whiskey Sour",
+        "price": "7,40"
+      },
+      {
+        "name": "Gin Fizz",
+        "price": "7,40"
+      },
+      {
+        "name": "Mojito",
+        "detail": "saisonabhängig",
+        "price": "7,40"
+      },
+      {
+        "name": "Long Island Iced Tea",
+        "price": "9,00"
+      },
+      {
+        "name": "Hugo",
+        "detail": "saisonabhängig",
+        "price": "6,00"
+      },
+      {
+        "name": "Aperol Spritz",
+        "price": "6,00"
+      }
+    ]
+  },
+  {
+    "id": "longdrinks",
+    "title": "Longdrinks",
+    "type": "simple",
+    "items": [
+      {
+        "name": "Havana Cola",
+        "price": "6,50"
+      },
+      {
+        "name": "Gin Tonic",
+        "price": "6,50"
+      },
+      {
+        "name": "Gin Tonic",
+        "detail": "Monkey Gin",
+        "price": "9,50"
+      },
+      {
+        "name": "Vodka Lemon",
+        "price": "6,50"
+      },
+      {
+        "name": "Vodka Red Bull",
+        "price": "6,50"
+      },
+      {
+        "name": "Malibu Maracuja",
+        "price": "6,50"
+      },
+      {
+        "name": "Batida Kirsch",
+        "price": "6,50"
+      },
+      {
+        "name": "Campari Orange",
+        "price": "6,50"
+      },
+      {
+        "name": "Campari Soda",
+        "price": "6,50"
+      },
+      {
+        "name": "Jack Daniel's Cola",
+        "price": "7,50"
+      },
+      {
+        "name": "Longdrink Krug",
+        "price": "20,00"
+      },
+      {
+        "name": "Jack Daniel's Cola Krug",
+        "price": "22,00"
+      },
+      {
+        "name": "Cuba Libre Krug",
+        "price": "22,00"
+      },
+      {
+        "name": "Krug Long Island Iced Tea",
+        "price": "24,00"
+      }
+    ]
+  },
+  {
+    "id": "spirituosen",
+    "title": "Spirituosen",
+    "type": "simple",
+    "subtitle": "4 cl",
+    "items": [
+      {
+        "name": "Martini Bianco",
+        "price": "4,00"
+      },
+      {
+        "name": "Martini D'Oro",
+        "price": "4,00"
+      },
+      {
+        "name": "Campari",
+        "price": "4,00"
+      },
+      {
+        "name": "Aperol",
+        "price": "4,00"
+      },
+      {
+        "name": "Ramazzotti",
+        "price": "4,00"
+      },
+      {
+        "name": "Ricard",
+        "price": "4,50"
+      },
+      {
+        "name": "Bacardi Light Dry",
+        "price": "4,50"
+      },
+      {
+        "name": "Havana 3 Jahre",
+        "price": "4,50"
+      },
+      {
+        "name": "Havana 7 Jahre",
+        "price": "6,00"
+      },
+      {
+        "name": "Myers's Rum",
+        "price": "5,00"
+      },
+      {
+        "name": "Bailey's",
+        "price": "4,50"
+      },
+      {
+        "name": "Malibu",
+        "price": "4,50"
+      },
+      {
+        "name": "Batida de Coco",
+        "price": "4,50"
+      },
+      {
+        "name": "Bombay Dry Gin",
+        "price": "4,50"
+      },
+      {
+        "name": "Absolut Vodka",
+        "price": "4,50"
+      },
+      {
+        "name": "Obstbrände",
+        "price": "4,50"
+      },
+      {
+        "name": "Hennessy V.S.",
+        "price": "5,00"
+      },
+      {
+        "name": "Four Roses Bourbon",
+        "price": "4,50"
+      },
+      {
+        "name": "Glenfiddich Scotch",
+        "price": "5,50"
+      },
+      {
+        "name": "Glenmorangie Scotch",
+        "price": "7,00"
+      },
+      {
+        "name": "Jack Daniel's Bourbon",
+        "price": "5,00"
+      },
+      {
+        "name": "Lagavulin 16 Jahre, Scotch",
+        "price": "8,00"
+      },
+      {
+        "name": "Macallan 12 Jahre, Scotch",
+        "price": "8,00"
+      },
+      {
+        "name": "Tullamore Dew Irish",
+        "price": "5,00"
+      }
+    ]
+  },
+  {
+    "id": "shots",
+    "title": "Shots",
+    "type": "simple",
+    "subtitle": "2 cl",
+    "items": [
+      {
+        "name": "Totengräber",
+        "detail": "Vodka und Zitrone",
+        "price": "2,50"
+      },
+      {
+        "name": "Gimlet",
+        "detail": "Gin und Lime Juice",
+        "price": "2,50"
+      },
+      {
+        "name": "Tequila",
+        "price": "2,50"
+      },
+      {
+        "name": "Vodka",
+        "price": "2,50"
+      },
+      {
+        "name": "Sambuca",
+        "price": "2,50"
+      },
+      {
+        "name": "Fernet Branca",
+        "price": "2,50"
+      },
+      {
+        "name": "Jägermeister",
+        "price": "2,50"
+      },
+      {
+        "name": "Saurer Joster",
+        "price": "2,50"
+      },
+      {
+        "name": "Frangelico",
+        "detail": "Haselnusslikör",
+        "price": "2,50"
+      }
+    ]
+  },
+  {
+    "id": "wein",
+    "title": "Wein / Prosecco",
+    "type": "grid",
+    "columns": [
+      "1/8l",
+      "1/4l"
+    ],
+    "sections": [
+      {
+        "label": "Weißwein (trocken)",
+        "items": [
+          {
+            "name": "Riesling",
+            "detail": "Sieferle Ortenberg",
+            "prices": [
+              "2,90",
+              "5,20"
+            ]
+          },
+          {
+            "name": "Müller-Thurgau",
+            "detail": "Sieferle Ortenberg",
+            "prices": [
+              "2,90",
+              "5,20"
+            ]
+          },
+          {
+            "name": "Grauburgunder",
+            "detail": "Sieferle Ortenberg",
+            "prices": [
+              "3,30",
+              "5,80"
+            ]
+          },
+          {
+            "name": "Weinschorle",
+            "detail": "Sieferle Ortenberg",
+            "prices": [
+              null,
+              "3,20"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Rotwein (trocken)",
+        "items": [
+          {
+            "name": "Miedes",
+            "detail": "Spanien",
+            "prices": [
+              "2,90",
+              "5,20"
+            ]
+          },
+          {
+            "name": "Spätburgunder",
+            "detail": "Sieferle Ortenberg",
+            "prices": [
+              "2,90",
+              "5,20"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Rosé (trocken)",
+        "items": [
+          {
+            "name": "Rosé",
+            "detail": "Sieferle Ortenberg",
+            "prices": [
+              "2,90",
+              "5,20"
+            ]
+          }
+        ]
+      }
+    ],
+    "extra": [
+      {
+        "label": "Secco / Sekt",
+        "items": [
+          {
+            "name": "Secco, Glas",
+            "detail": "Sieferle Ortenberg",
+            "price": "3,50"
+          },
+          {
+            "name": "Secco Flasche 0,7l",
+            "detail": "Sieferle Ortenberg",
+            "price": "16,00"
+          },
+          {
+            "name": "Grauburgunder Winzersekt oder Rosésekt"
+          },
+          {
+            "name": "  Flasche 0,7l",
+            "detail": "Sieferle Ortenberg",
+            "price": "23,00"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "biere",
+    "title": "Biere vom Fass & Flasche",
+    "type": "grid",
+    "columns": [
+      "0,2l",
+      "0,3l",
+      "0,5l"
+    ],
+    "items": [
+      {
+        "name": "Becks",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Lammsbräu Bio",
+        "prices": [
+          "3,30",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Lammsbräu alkoholfrei Bio",
+        "prices": [
+          "3,30",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Wulle",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Jever",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Jever fun alkoholfrei",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Tannenzäpfle",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Ulmer",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Astra",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Waldhaus",
+        "detail": "Diplom Pils",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Waldhaus",
+        "detail": "hell",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Waldhaus",
+        "detail": "naturtrüb",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Waldhaus",
+        "detail": "naturtrüb, dunkel",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Waldhaus Naturradler",
+        "prices": [
+          "3,00",
+          null,
+          null
+        ]
+      }
+    ],
+    "extra": [
+      {
+        "label": "Weizenbier",
+        "items": [
+          {
+            "name": "Hefe Weizen Hell",
+            "detail": "Waldhaus",
+            "price": "3,90"
+          },
+          {
+            "name": "Hefe Weizen Hell a.f.",
+            "detail": "Erdinger",
+            "price": "3,90"
+          },
+          {
+            "name": "Kristall Weizen Hell",
+            "detail": "Maisel's",
+            "price": "3,90"
+          },
+          {
+            "name": "Cola Weizen",
+            "price": "4,10"
+          },
+          {
+            "name": "Saft Weizen",
+            "price": "4,10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "alkoholfrei",
+    "title": "Alkoholfreie Cocktails",
+    "type": "simple",
+    "items": [
+      {
+        "name": "Fruchtmix",
+        "price": "4,60"
+      },
+      {
+        "name": "Red Lounge",
+        "price": "4,60"
+      },
+      {
+        "name": "Sara",
+        "price": "4,60"
+      },
+      {
+        "name": "Virgin Colada",
+        "price": "4,60"
+      }
+    ]
+  },
+  {
+    "id": "essen",
+    "title": "Essen",
+    "type": "simple",
+    "items": [
+      {
+        "name": "Hausgemachte Panini",
+        "price": "5,00"
+      },
+      {
+        "name": "Hausgemachte Tagessuppe",
+        "detail": "Bio & vegan",
+        "price": "5,00"
+      },
+      {
+        "name": "Baguettes: Schinken, Salami o. Käse",
+        "price": "4,50"
+      },
+      {
+        "name": "Kuchen",
+        "detail": "meist hausgemacht",
+        "price": "3,50"
+      },
+      {
+        "name": "Butterbrezel, Croissant",
+        "price": "1,50"
+      },
+      {
+        "name": "Croissant",
+        "price": "1,50"
+      },
+      {
+        "name": "Mini Schokokissen",
+        "detail": "2 Stück",
+        "price": "1,50"
+      },
+      {
+        "name": "Hofeis",
+        "detail": "Mundenhof Freiburg / Saisonbed.",
+        "price": "2,50"
+      }
+    ]
+  }
+]

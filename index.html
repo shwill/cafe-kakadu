@@ -348,21 +348,8 @@
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
         Von Espresso<br/><span class="text-primary-container">bis Cuba Libre.</span>
       </h2>
-      <!-- Filter Pills -->
-      <div class="flex gap-2 mb-12 overflow-x-auto pb-2 -mx-8 px-8 scrollbar-hide">
-        <button onclick="filterMenu(this,'all')" class="menu-pill shrink-0 active bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Alles</button>
-        <button onclick="filterMenu(this,'warme')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Warme Getränke</button>
-        <button onclick="filterMenu(this,'kalte')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Kalte Getränke</button>
-        <button onclick="filterMenu(this,'saefte')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Säfte</button>
-        <button onclick="filterMenu(this,'cocktails')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Cocktails</button>
-        <button onclick="filterMenu(this,'longdrinks')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Longdrinks</button>
-        <button onclick="filterMenu(this,'spirituosen')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Spirituosen</button>
-        <button onclick="filterMenu(this,'shots')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Shots</button>
-        <button onclick="filterMenu(this,'wein')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Wein</button>
-        <button onclick="filterMenu(this,'biere')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Biere</button>
-        <button onclick="filterMenu(this,'alkoholfrei')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Alkoholfrei</button>
-        <button onclick="filterMenu(this,'essen')" class="menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer">Essen</button>
-      </div>
+      <!-- Filter Pills (auto-generated from menu.json) -->
+      <div id="menu-pills" class="flex gap-2 mb-12 overflow-x-auto pb-2 -mx-8 px-8 scrollbar-hide"></div>
 
       <style>
         .ken-burns {
@@ -413,260 +400,120 @@
         }
       </style>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
-
-        <!-- Warme Getränke -->
-        <div class="menu-cat" data-cat="warme">
-          <div class="menu-cat-title">Warme Getränke</div>
-          <div class="menu-row"><span class="menu-item">Café Lavazza</span><span class="menu-price">2,20</span></div>
-          <div class="menu-row"><span class="menu-item">Café, doppelt</span><span class="menu-price">3,80</span></div>
-          <div class="menu-row"><span class="menu-item">Espresso</span><span class="menu-price">1,90</span></div>
-          <div class="menu-row"><span class="menu-item">Espresso, doppelt</span><span class="menu-price">3,20</span></div>
-          <div class="menu-row"><span class="menu-item">Espresso Macchiato</span><span class="menu-price">2,20</span></div>
-          <div class="menu-row"><span class="menu-item">Milchcafé <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Milchcafé Schale <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">4,90</span></div>
-          <div class="menu-row"><span class="menu-item">Latte Macchiato <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Flavoured Latte Macchiato</span><span class="menu-price">3,60</span></div>
-          <div class="menu-detail" style="padding-left:0.25rem">(Caramel, Zimt, Vanille, Haselnuss, Kokos)</div>
-          <div class="menu-row"><span class="menu-item">Cappuccino <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,00</span></div>
-          <div class="menu-row"><span class="menu-item">Cappuccino groß <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,90</span></div>
-          <div class="menu-row"><span class="menu-item">Heiße Schokolade <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Kakao <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Ovomaltine <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Heiße Milch mit Honig <span class="menu-detail">(Bio Vollmilch)</span></span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Heiße Zitrone</span><span class="menu-price">3,10</span></div>
-          <div class="menu-row"><span class="menu-item">Heiße Zitrone mit Ingwer</span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Chai Latte</span><span class="menu-price">3,40</span></div>
-          <div class="menu-row"><span class="menu-item">Latte Macchiato Bailey's</span><span class="menu-price">5,60</span></div>
-          <div class="menu-row"><span class="menu-item">Irish Coffee</span><span class="menu-price">5,60</span></div>
-          <div class="menu-row"><span class="menu-item">Tee</span><span class="menu-price">2,70</span></div>
-          <div class="menu-row"><span class="menu-item">Tee Kanne</span><span class="menu-price">4,90</span></div>
-          <p class="menu-note">Alle milchhaltigen Getränke auch mit Bio Hafermilch erhältlich.</p>
-        </div>
-
-        <!-- Kalte Getränke -->
-        <div class="menu-cat" data-cat="kalte">
-          <div class="menu-cat-title">Kalte Getränke</div>
-          <div class="menu-grid">
-            <div class="menu-grid-header"><span></span><span>0,2l</span><span>0,3l</span><span>0,4l</span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-kola</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-kola ohne Zucker</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-limo Orange</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-mischmasch <span class="menu-detail">(Spezi)</span></span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-kola Zitrone</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-bio-Traubenschorle</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz-bio-Rhabarberschorle</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">fritz Apfel-Kirsch-Holunder</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Club-Mate</span><span class="g-price empty"></span><span class="g-price">3,00</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Coca Cola</span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">3,30</span></div>
-            <div class="menu-grid-row"><span class="g-name">Ginger Ale</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Tonic Water</span><span class="g-price empty"></span><span class="g-price">2,80</span><span class="g-price">3,30</span></div>
-            <div class="menu-grid-row"><span class="g-name">Bitter Lemon</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Spicy Ginger</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Orangina</span><span class="g-price">2,80</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Red Bull</span><span class="g-price empty"></span><span class="g-price">3,50</span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Mineralwasser</span><span class="g-price">2,20</span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
-            <div class="menu-grid-row"><span class="g-name">Zitronenwasser <span class="menu-detail">(+ frischgepresste Zitrone)</span></span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">3,30</span></div>
-            <div class="menu-grid-row"><span class="g-name">Lebensquell still</span><span class="g-price">2,20</span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
-            <div class="menu-grid-row"><span class="g-name">Süßer Sprudel</span><span class="g-price">2,20</span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
-            <div class="menu-grid-row"><span class="g-name">Eistee Pfirsich</span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">2,60</span></div>
-            <div class="menu-grid-row"><span class="g-name">Krug Eistee Pfirsich <span class="menu-detail">(ca. 0,75l)</span></span><span class="g-price empty"></span><span class="g-price empty"></span><span class="g-price">5,30</span></div>
-          </div>
-        </div>
-
-        <!-- Säfte -->
-        <div class="menu-cat" data-cat="saefte">
-          <div class="menu-cat-title">Säfte</div>
-          <div class="menu-grid" style="grid-template-columns: 1fr repeat(2, 3.5rem);">
-            <div class="menu-grid-header"><span></span><span>0,3l</span><span>0,4l</span></div>
-            <div class="menu-grid-row"><span class="g-name">Ananas Fruchtsaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Apfel Bio Naturtrüb</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Bananen Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Mango Fruchtsaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Kirsch Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Maracuja Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Pfirsich Nektar</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Johannisbeersaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Orange Bio Direktsaft</span><span class="g-price">2,60</span><span class="g-price">3,50</span></div>
-            <div class="menu-grid-row"><span class="g-name">Saftschorle</span><span class="g-price">2,40</span><span class="g-price">3,10</span></div>
-          </div>
-        </div>
-
-        <!-- Cocktails -->
-        <div class="menu-cat" data-cat="cocktails">
-          <div class="menu-cat-title">Cocktails</div>
-          <div class="menu-row"><span class="menu-item">Cuba Libre</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Gimlet</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Caipirinha</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Caipirovka</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Memphis</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Moscow Mule</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Pina Colada</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Planter's Punch</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Tequila Sunrise</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Tom Cruise</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">White Russian</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Whiskey Sour</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Gin Fizz</span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Mojito <span class="menu-detail">(saisonabhängig)</span></span><span class="menu-price">7,40</span></div>
-          <div class="menu-row"><span class="menu-item">Long Island Iced Tea</span><span class="menu-price">9,00</span></div>
-          <div class="menu-row"><span class="menu-item">Hugo <span class="menu-detail">(saisonabhängig)</span></span><span class="menu-price">6,00</span></div>
-          <div class="menu-row"><span class="menu-item">Aperol Spritz</span><span class="menu-price">6,00</span></div>
-        </div>
-
-        <!-- Longdrinks -->
-        <div class="menu-cat" data-cat="longdrinks">
-          <div class="menu-cat-title">Longdrinks</div>
-          <div class="menu-row"><span class="menu-item">Havana Cola</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Gin Tonic</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Gin Tonic <span class="menu-detail">(Monkey Gin)</span></span><span class="menu-price">9,50</span></div>
-          <div class="menu-row"><span class="menu-item">Vodka Lemon</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Vodka Red Bull</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Malibu Maracuja</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Batida Kirsch</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Campari Orange</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Campari Soda</span><span class="menu-price">6,50</span></div>
-          <div class="menu-row"><span class="menu-item">Jack Daniel's Cola</span><span class="menu-price">7,50</span></div>
-          <div class="menu-row"><span class="menu-item">Longdrink Krug</span><span class="menu-price">20,00</span></div>
-          <div class="menu-row"><span class="menu-item">Jack Daniel's Cola Krug</span><span class="menu-price">22,00</span></div>
-          <div class="menu-row"><span class="menu-item">Cuba Libre Krug</span><span class="menu-price">22,00</span></div>
-          <div class="menu-row"><span class="menu-item">Krug Long Island Iced Tea</span><span class="menu-price">24,00</span></div>
-        </div>
-
-        <!-- Spirituosen -->
-        <div class="menu-cat" data-cat="spirituosen">
-          <div class="menu-cat-title">Spirituosen</div>
-          <div class="menu-cat-sub">4 cl</div>
-          <div class="menu-row"><span class="menu-item">Martini Bianco</span><span class="menu-price">4,00</span></div>
-          <div class="menu-row"><span class="menu-item">Martini D'Oro</span><span class="menu-price">4,00</span></div>
-          <div class="menu-row"><span class="menu-item">Campari</span><span class="menu-price">4,00</span></div>
-          <div class="menu-row"><span class="menu-item">Aperol</span><span class="menu-price">4,00</span></div>
-          <div class="menu-row"><span class="menu-item">Ramazzotti</span><span class="menu-price">4,00</span></div>
-          <div class="menu-row"><span class="menu-item">Ricard</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Bacardi Light Dry</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Havana 3 Jahre</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Havana 7 Jahre</span><span class="menu-price">6,00</span></div>
-          <div class="menu-row"><span class="menu-item">Myers's Rum</span><span class="menu-price">5,00</span></div>
-          <div class="menu-row"><span class="menu-item">Bailey's</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Malibu</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Batida de Coco</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Bombay Dry Gin</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Absolut Vodka</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Obstbrände</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Hennessy V.S.</span><span class="menu-price">5,00</span></div>
-          <div class="menu-row"><span class="menu-item">Four Roses Bourbon</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Glenfiddich Scotch</span><span class="menu-price">5,50</span></div>
-          <div class="menu-row"><span class="menu-item">Glenmorangie Scotch</span><span class="menu-price">7,00</span></div>
-          <div class="menu-row"><span class="menu-item">Jack Daniel's Bourbon</span><span class="menu-price">5,00</span></div>
-          <div class="menu-row"><span class="menu-item">Lagavulin 16 Jahre, Scotch</span><span class="menu-price">8,00</span></div>
-          <div class="menu-row"><span class="menu-item">Macallan 12 Jahre, Scotch</span><span class="menu-price">8,00</span></div>
-          <div class="menu-row"><span class="menu-item">Tullamore Dew Irish</span><span class="menu-price">5,00</span></div>
-        </div>
-
-        <!-- Shots -->
-        <div class="menu-cat" data-cat="shots">
-          <div class="menu-cat-title">Shots</div>
-          <div class="menu-cat-sub">2 cl</div>
-          <div class="menu-row"><span class="menu-item">Totengräber <span class="menu-detail">(Vodka und Zitrone)</span></span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Gimlet <span class="menu-detail">(Gin und Lime Juice)</span></span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Tequila</span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Vodka</span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Sambuca</span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Fernet Branca</span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Jägermeister</span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Saurer Joster</span><span class="menu-price">2,50</span></div>
-          <div class="menu-row"><span class="menu-item">Frangelico <span class="menu-detail">(Haselnusslikör)</span></span><span class="menu-price">2,50</span></div>
-        </div>
-
-        <!-- Wein / Prosecco -->
-        <div class="menu-cat" data-cat="wein">
-          <div class="menu-cat-title">Wein / Prosecco</div>
-          <div class="menu-grid" style="grid-template-columns: 1fr repeat(2, 3.5rem);">
-            <div class="menu-grid-header"><span></span><span>1/8l</span><span>1/4l</span></div>
-            <div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.5rem;">Weißwein (trocken)</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Riesling <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
-            <div class="menu-grid-row"><span class="g-name">Müller-Thurgau <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
-            <div class="menu-grid-row"><span class="g-name">Grauburgunder <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">3,30</span><span class="g-price">5,80</span></div>
-            <div class="menu-grid-row"><span class="g-name">Weinschorle <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price empty"></span><span class="g-price">3,20</span></div>
-            <div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.75rem;">Rotwein (trocken)</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Miedes <span class="menu-detail">(Spanien)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
-            <div class="menu-grid-row"><span class="g-name">Spätburgunder <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
-            <div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.75rem;">Rosé (trocken)</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Rosé <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="g-price">2,90</span><span class="g-price">5,20</span></div>
-          </div>
-          <div class="menu-detail" style="margin-top:1.25rem; margin-bottom:0.5rem; font-style:normal; text-transform:uppercase; letter-spacing:0.05em;">Secco / Sekt</div>
-          <div class="menu-row"><span class="menu-item">Secco, Glas <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="menu-price">3,50</span></div>
-          <div class="menu-row"><span class="menu-item">Secco Flasche 0,7l <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="menu-price">16,00</span></div>
-          <div class="menu-row"><span class="menu-item">Grauburgunder Winzersekt oder Rosésekt</span></div>
-          <div class="menu-row"><span class="menu-item" style="padding-left:1rem">Flasche 0,7l <span class="menu-detail">(Sieferle Ortenberg)</span></span><span class="menu-price">23,00</span></div>
-        </div>
-
-        <!-- Biere -->
-        <div class="menu-cat" data-cat="biere">
-          <div class="menu-cat-title">Biere vom Fass & Flasche</div>
-          <div class="menu-grid">
-            <div class="menu-grid-header"><span></span><span>0,2l</span><span>0,3l</span><span>0,5l</span></div>
-            <div class="menu-grid-row"><span class="g-name">Becks</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Lammsbräu Bio</span><span class="g-price">3,30</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Lammsbräu alkoholfrei Bio</span><span class="g-price">3,30</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Wulle</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Jever</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Jever fun alkoholfrei</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Tannenzäpfle</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Ulmer</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Astra</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(Diplom Pils)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(hell)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(naturtrüb)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Waldhaus <span class="menu-detail">(naturtrüb, dunkel)</span></span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-            <div class="menu-grid-row"><span class="g-name">Waldhaus Naturradler</span><span class="g-price">3,00</span><span class="g-price empty"></span><span class="g-price empty"></span></div>
-          </div>
-          <div class="menu-cat-sub" style="margin-top:1.5rem; margin-bottom:0.5rem; font-style:normal; text-transform:uppercase; letter-spacing:0.05em; color:#baab6c; font-family:'Epilogue'; font-weight:700;">Weizenbier</div>
-          <div class="menu-row"><span class="menu-item">Hefe Weizen Hell <span class="menu-detail">(Waldhaus)</span></span><span class="menu-price">3,90</span></div>
-          <div class="menu-row"><span class="menu-item">Hefe Weizen Hell a.f. <span class="menu-detail">(Erdinger)</span></span><span class="menu-price">3,90</span></div>
-          <div class="menu-row"><span class="menu-item">Kristall Weizen Hell <span class="menu-detail">(Maisel's)</span></span><span class="menu-price">3,90</span></div>
-          <div class="menu-row"><span class="menu-item">Cola Weizen</span><span class="menu-price">4,10</span></div>
-          <div class="menu-row"><span class="menu-item">Saft Weizen</span><span class="menu-price">4,10</span></div>
-        </div>
-
-        <!-- Alkoholfrei (Cocktails) -->
-        <div class="menu-cat" data-cat="alkoholfrei">
-          <div class="menu-cat-title">Alkoholfreie Cocktails</div>
-          <div class="menu-row"><span class="menu-item">Fruchtmix</span><span class="menu-price">4,60</span></div>
-          <div class="menu-row"><span class="menu-item">Red Lounge</span><span class="menu-price">4,60</span></div>
-          <div class="menu-row"><span class="menu-item">Sara</span><span class="menu-price">4,60</span></div>
-          <div class="menu-row"><span class="menu-item">Virgin Colada</span><span class="menu-price">4,60</span></div>
-        </div>
-
-        <!-- Essen -->
-        <div class="menu-cat" data-cat="essen">
-          <div class="menu-cat-title">Essen</div>
-          <div class="menu-row"><span class="menu-item">Hausgemachte Panini</span><span class="menu-price">5,00</span></div>
-          <div class="menu-row"><span class="menu-item">Hausgemachte Tagessuppe <span class="menu-detail">(Bio & vegan)</span></span><span class="menu-price">5,00</span></div>
-          <div class="menu-row"><span class="menu-item">Baguettes: Schinken, Salami o. Käse</span><span class="menu-price">4,50</span></div>
-          <div class="menu-row"><span class="menu-item">Kuchen <span class="menu-detail">(meist hausgemacht)</span></span><span class="menu-price">3,50</span></div>
-          <div class="menu-row"><span class="menu-item">Butterbrezel, Croissant</span><span class="menu-price">1,50</span></div>
-          <div class="menu-row"><span class="menu-item">Croissant</span><span class="menu-price">1,50</span></div>
-          <div class="menu-row"><span class="menu-item">Mini Schokokissen <span class="menu-detail">(2 Stück)</span></span><span class="menu-price">1,50</span></div>
-          <div class="menu-row"><span class="menu-item">Hofeis <span class="menu-detail">(Mundenhof Freiburg / Saisonbed.)</span></span><span class="menu-price">2,50</span></div>
-        </div>
-
-      </div>
+      <div id="menu-content" class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4"></div>
 
       <script>
-        function filterMenu(btn, cat) {
-          document.querySelectorAll('.menu-pill').forEach(p => {
-            p.classList.remove('active');
-            p.className = p.className.replace('bg-gradient-to-br from-primary to-primary-container text-on-primary', 'bg-surface-container-high text-on-surface-variant');
+      (function() {
+        var PILL_ACTIVE = 'menu-pill shrink-0 active bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer';
+        var PILL_INACTIVE = 'menu-pill shrink-0 bg-surface-container-high text-on-surface-variant font-headline font-bold uppercase text-[10px] tracking-widest px-5 py-2.5 rounded-full transition-all cursor-pointer';
+
+        fetch('data/menu.json').then(function(r){return r.json()}).then(function(cats) {
+          var pills = document.getElementById('menu-pills');
+          var content = document.getElementById('menu-content');
+
+          // Build pills
+          var allBtn = document.createElement('button');
+          allBtn.className = PILL_ACTIVE;
+          allBtn.textContent = 'Alles';
+          allBtn.onclick = function() { filterMenu(this, 'all'); };
+          pills.appendChild(allBtn);
+
+          cats.forEach(function(cat) {
+            var btn = document.createElement('button');
+            btn.className = PILL_INACTIVE;
+            btn.textContent = cat.title;
+            btn.onclick = function() { filterMenu(this, cat.id); };
+            pills.appendChild(btn);
           });
-          btn.classList.add('active');
-          btn.className = btn.className.replace('bg-surface-container-high text-on-surface-variant', 'bg-gradient-to-br from-primary to-primary-container text-on-primary');
-          document.querySelectorAll('.menu-cat[data-cat]').forEach(el => {
-            el.classList.toggle('hidden', cat !== 'all' && el.dataset.cat !== cat);
+
+          // Build menu content
+          cats.forEach(function(cat) {
+            var div = document.createElement('div');
+            div.className = 'menu-cat';
+            div.dataset.cat = cat.id;
+            var html = '<div class="menu-cat-title">' + cat.title + '</div>';
+
+            if (cat.subtitle) html += '<div class="menu-cat-sub">' + cat.subtitle + '</div>';
+
+            if (cat.type === 'grid') {
+              var cols = cat.columns || [];
+              var gridCols = '1fr repeat(' + cols.length + ', 3.5rem)';
+              html += '<div class="menu-grid" style="grid-template-columns:' + gridCols + '">';
+              html += '<div class="menu-grid-header"><span></span>';
+              cols.forEach(function(c) { html += '<span>' + c + '</span>'; });
+              html += '</div>';
+
+              // Sections (wine-style sub-headers)
+              if (cat.sections) {
+                cat.sections.forEach(function(sec) {
+                  html += '<div class="menu-grid-row"><span class="g-name menu-detail" style="font-style:normal;text-transform:uppercase;letter-spacing:0.05em;padding-top:0.75rem">' + sec.label + '</span>';
+                  cols.forEach(function() { html += '<span class="g-price empty"></span>'; });
+                  html += '</div>';
+                  sec.items.forEach(function(item) {
+                    html += '<div class="menu-grid-row"><span class="g-name">' + item.name + (item.detail ? ' <span class="menu-detail">(' + item.detail + ')</span>' : '') + '</span>';
+                    (item.prices || []).forEach(function(p) {
+                      html += '<span class="g-price' + (p ? '' : ' empty') + '">' + (p || '') + '</span>';
+                    });
+                    html += '</div>';
+                  });
+                });
+              }
+
+              // Regular items
+              if (cat.items) {
+                cat.items.forEach(function(item) {
+                  html += '<div class="menu-grid-row"><span class="g-name">' + item.name + (item.detail ? ' <span class="menu-detail">(' + item.detail + ')</span>' : '') + '</span>';
+                  (item.prices || []).forEach(function(p) {
+                    html += '<span class="g-price' + (p ? '' : ' empty') + '">' + (p || '') + '</span>';
+                  });
+                  html += '</div>';
+                });
+              }
+              html += '</div>';
+            }
+
+            if (cat.type === 'simple') {
+              (cat.items || []).forEach(function(item) {
+                html += '<div class="menu-row"><span class="menu-item">' + item.name + (item.detail ? ' <span class="menu-detail">(' + item.detail + ')</span>' : '') + '</span>';
+                if (item.price) html += '<span class="menu-price">' + item.price + '</span>';
+                html += '</div>';
+              });
+            }
+
+            // Extra sections (Secco/Sekt, Weizenbier)
+            if (cat.extra) {
+              cat.extra.forEach(function(sec) {
+                html += '<div class="menu-detail" style="margin-top:1.25rem;margin-bottom:0.5rem;font-style:normal;text-transform:uppercase;letter-spacing:0.05em">' + sec.label + '</div>';
+                sec.items.forEach(function(item) {
+                  html += '<div class="menu-row"><span class="menu-item">' + item.name + (item.detail ? ' <span class="menu-detail">(' + item.detail + ')</span>' : '') + '</span>';
+                  if (item.price) html += '<span class="menu-price">' + item.price + '</span>';
+                  html += '</div>';
+                });
+              });
+            }
+
+            if (cat.note) html += '<p class="menu-note">' + cat.note + '</p>';
+
+            div.innerHTML = html;
+            content.appendChild(div);
           });
-        }
+
+          // Filter function
+          window.filterMenu = function(btn, cat) {
+            pills.querySelectorAll('.menu-pill').forEach(function(p) {
+              p.className = PILL_INACTIVE;
+            });
+            btn.className = PILL_ACTIVE;
+            content.querySelectorAll('.menu-cat[data-cat]').forEach(function(el) {
+              el.classList.toggle('hidden', cat !== 'all' && el.dataset.cat !== cat);
+            });
+          };
+        });
+      })();
       </script>
     </section>
+
+    <!-- OLD MENU REMOVED - now loaded from data/menu.json -->
 
     <!-- Anfahrt & Kontakt -->
     <section id="kontakt" class="py-24 px-8 max-w-screen-2xl mx-auto">
@@ -735,27 +582,24 @@
       </h2>
       <div class="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3" id="gallery-grid"></div>
       <script>
-        (function() {
-          var dims = {"1":[800,643],"2":[800,537],"3":[800,541],"4":[380,242],"5":[380,242],"6":[800,731],"7":[381,610],"8":[381,287],"9":[380,178],"10":[380,294],"11":[380,227],"12":[380,493],"13":[380,780],"14":[380,507],"15":[380,507],"16":[380,486],"17":[380,555],"18":[380,229],"19":[381,516],"20":[380,254],"21":[380,335],"22":[380,434],"23":[380,380],"24":[380,469],"25":[382,619],"26":[380,604],"27":[381,340],"28":[382,340],"29":[207,247],"30":[380,566],"31":[380,571],"32":[380,242],"33":[380,334],"34":[380,299],"35":[379,571],"36":[380,569],"37":[380,315],"38":[380,384],"39":[379,557],"40":[379,335],"41":[380,313],"42":[379,397],"43":[380,567],"44":[380,413],"45":[270,377],"46":[286,300],"47":[380,497],"48":[381,180],"49":[800,534],"50":[380,255],"51":[378,253],"52":[799,538],"53":[380,310],"54":[380,310],"55":[800,534],"56":[380,228],"57":[380,256],"58":[380,253],"59":[380,254],"60":[381,254],"61":[380,553],"62":[800,534],"63":[380,570],"64":[383,570],"65":[380,254],"66":[380,254],"67":[721,533],"68":[380,259],"69":[381,567],"70":[800,600],"71":[800,537],"72":[380,417],"73":[380,417],"74":[379,246],"75":[380,282],"76":[379,566],"77":[799,538],"78":[380,254],"79":[380,570],"80":[379,473],"81":[379,573],"82":[379,466],"83":[380,254],"84":[380,340],"85":[380,235],"86":[380,614],"87":[380,567],"88":[380,197],"89":[380,275],"90":[380,487],"91":[380,605],"92":[381,334],"93":[380,234],"94":[380,306],"95":[380,269],"96":[381,613],"97":[800,431],"98":[380,631],"99":[380,254],"100":[380,255],"101":[380,282],"102":[800,467],"103":[380,499],"104":[376,652],"105":[378,424],"106":[380,306],"107":[381,500],"108":[381,771],"109":[800,524],"110":[800,381],"111":[380,486],"112":[380,219],"113":[380,309],"114":[380,560],"115":[380,534],"116":[380,344],"117":[380,264],"118":[380,254],"119":[380,380],"120":[380,394],"121":[380,421],"122":[381,588],"123":[380,701],"124":[380,571],"125":[380,571],"126":[380,301],"127":[380,232],"128":[380,572],"129":[800,480],"130":[381,349],"131":[381,349],"132":[381,349],"133":[381,352],"134":[196,387],"135":[380,387],"136":[358,465],"137":[423,465],"138":[380,367],"139":[380,273],"140":[380,275],"141":[380,587],"142":[380,371],"143":[800,434],"144":[800,428],"145":[381,379],"146":[380,379],"147":[800,538],"148":[381,410],"149":[380,249],"150":[380,271],"151":[380,410],"152":[381,577],"153":[380,296],"154":[380,219],"155":[321,357],"156":[379,544],"157":[381,502],"158":[380,420]};
+        fetch('data/gallery.json').then(function(r){return r.json()}).then(function(images) {
           var grid = document.getElementById('gallery-grid');
-          for (var i = 1; i <= 158; i++) {
-            var d = dims[i];
-            var num = String(i).padStart(3, '0');
+          images.forEach(function(d) {
             var div = document.createElement('div');
             div.className = 'rounded-xl overflow-hidden group break-inside-avoid';
             var img = document.createElement('img');
-            img.src = 'images/gallery/gallery_' + num + '.webp';
+            img.src = 'images/gallery/' + d.file;
             img.alt = 'Café Kakadu';
-            img.width = d[0];
-            img.height = d[1];
+            img.width = d.w;
+            img.height = d.h;
             img.className = 'w-full object-cover ken-burns';
             img.loading = 'lazy';
             img.decoding = 'async';
-            img.style.aspectRatio = d[0] + '/' + d[1];
+            img.style.aspectRatio = d.w + '/' + d.h;
             div.appendChild(img);
             grid.appendChild(div);
-          }
-        })();
+          });
+        });
       </script>
     </section>
 
