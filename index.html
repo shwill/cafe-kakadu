@@ -4,6 +4,22 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Café Kakadu — Offenburg</title>
+  <meta name="description" content="Café Kakadu — Dein Wohnzimmer in Offenburg. Kaffee, Kuchen & Cocktails. Wasserstraße 1. Mo–Sa ab 9 Uhr, So ab 14 Uhr."/>
+  <link rel="canonical" href="https://kakadu.artificery.io/"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Café Kakadu — Offenburg"/>
+  <meta property="og:description" content="Kaffee am Tag. Drinks bei Nacht. Wasserstraße 1, Offenburg."/>
+  <meta property="og:image" content="https://kakadu.artificery.io/og-image.png"/>
+  <meta property="og:url" content="https://kakadu.artificery.io/"/>
+  <meta property="og:locale" content="de_DE"/>
+  <meta property="og:site_name" content="Café Kakadu"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Café Kakadu — Offenburg"/>
+  <meta name="twitter:description" content="Kaffee am Tag. Drinks bei Nacht. Wasserstraße 1, Offenburg."/>
+  <meta name="twitter:image" content="https://kakadu.artificery.io/og-image.png"/>
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
   <link rel="icon" type="image/png" sizes="256x256" href="favicon-256.png"/>
@@ -93,13 +109,70 @@
     body { background-color: #161311; color: #eae1dd; }
     html { scroll-behavior: smooth; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Café Kakadu",
+    "description": "Café und Bar in Offenburg — Kaffee am Tag, Drinks bei Nacht.",
+    "url": "https://kakadu.artificery.io",
+    "telephone": "+4978176410",
+    "email": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Wasserstraße 1",
+      "addressLocality": "Offenburg",
+      "postalCode": "77652",
+      "addressRegion": "Baden-Württemberg",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.47174,
+      "longitude": 7.942343
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "09:00",
+        "closes": "00:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "02:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "14:00",
+        "closes": "00:00"
+      }
+    ],
+    "priceRange": "€",
+    "servesCuisine": ["Kaffee","Cocktails","Snacks"],
+    "hasMenu": "https://kakadu.artificery.io/#menu",
+    "image": "https://kakadu.artificery.io/og-image.png",
+    "sameAs": [
+      "https://www.facebook.com/cafekakadu",
+      "https://www.cafe-kakadu.de"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Sebastian Mußler"
+    }
+  }
+  </script>
 </head>
 <body class="font-body selection:bg-primary-container selection:text-on-primary">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:bg-primary-container focus:text-on-primary focus:px-4 focus:py-2 focus:rounded-full focus:font-bold">Zum Inhalt springen</a>
 
   <!-- TopAppBar -->
   <header class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-xl transition-colors duration-500">
     <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-      <a href="#" class="text-2xl font-black tracking-tighter text-primary-container font-headline uppercase">
+      <a href="/" class="text-2xl font-black tracking-tighter text-primary-container font-headline uppercase">
         Café Kakadu
       </a>
       <nav class="hidden md:flex gap-12 font-headline tracking-tight font-bold uppercase text-xs">
@@ -149,7 +222,7 @@
     }
   </script>
 
-  <main class="relative min-h-screen overflow-hidden">
+  <main id="main" class="relative min-h-screen overflow-hidden">
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-24 px-8 max-w-screen-2xl mx-auto">
@@ -714,11 +787,11 @@
   </style>
 
   <!-- Impressum Modal -->
-  <div id="modal-impressum" class="legal-modal" onclick="if(event.target===this||event.target.classList.contains('backdrop'))this.classList.remove('open')">
+  <div id="modal-impressum" class="legal-modal" role="dialog" aria-labelledby="modal-impressum-title" onclick="if(event.target===this||event.target.classList.contains('backdrop'))this.classList.remove('open')">
     <div class="backdrop"></div>
     <div class="modal-body">
       <button class="close-btn" onclick="event.stopPropagation();document.getElementById('modal-impressum').classList.remove('open')" type="button">&times;</button>
-      <h2>Impressum</h2>
+      <h2 id="modal-impressum-title">Impressum</h2>
       <p><strong style="color:#eae1dd">Café Kakadu</strong><br/>Sebastian Mußler<br/>Wasserstraße 1<br/>77652 Offenburg<br/>Tel: 0781 / 76410</p>
 
       <h2 style="margin-top:2rem">Haftungsausschluss</h2>
@@ -738,11 +811,11 @@
   </div>
 
   <!-- Datenschutz Modal -->
-  <div id="modal-datenschutz" class="legal-modal" onclick="if(event.target===this||event.target.classList.contains('backdrop'))this.classList.remove('open')">
+  <div id="modal-datenschutz" class="legal-modal" role="dialog" aria-labelledby="modal-datenschutz-title" onclick="if(event.target===this||event.target.classList.contains('backdrop'))this.classList.remove('open')">
     <div class="backdrop"></div>
     <div class="modal-body">
       <button class="close-btn" onclick="event.stopPropagation();document.getElementById('modal-datenschutz').classList.remove('open')" type="button">&times;</button>
-      <h2>Datenschutzerklärung</h2>
+      <h2 id="modal-datenschutz-title">Datenschutzerklärung</h2>
 
       <h3>1. Verantwortlicher</h3>
       <p>Sebastian Mußler · Wasserstraße 1, 77652 Offenburg · Tel: 0781 / 76410</p>
