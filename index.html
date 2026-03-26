@@ -27,6 +27,7 @@
   <link rel="preload" href="fonts/epilogue-variable.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="preload" href="fonts/manrope-variable.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="preload" href="fonts/manifold-extd-medium.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="fonts/interstate-mono-light.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="preload" href="fonts/transducer-extended-bold.woff2" as="font" type="font/woff2" crossorigin/>
   <style>
     @font-face {
@@ -47,6 +48,13 @@
       font-family: 'Manifold Extd';
       src: url('fonts/manifold-extd-medium.woff2') format('woff2');
       font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Interstate Mono';
+      src: url('fonts/interstate-mono-light.woff2') format('woff2');
+      font-weight: 300;
       font-style: normal;
       font-display: swap;
     }
@@ -124,6 +132,9 @@
     }
   </script>
   <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay { transition-delay: 0.25s; }
     body { background: linear-gradient(267deg, rgb(17 15 13) 0%, rgb(70 55 49) 100%); background-attachment: fixed; color: #eae1dd; }
     html { scroll-behavior: smooth; }
   </style>
@@ -295,7 +306,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         <div class="md:col-span-1 space-y-6">
           <h3 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9]">
-            Der Rhythmus<br/><span class="text-primary-container">des Tages</span>
+            <span class="reveal" style="display:inline-block">Der Rhythmus</span><br/><span class="text-primary-container reveal reveal-delay" style="display:inline-block">des Tages</span>
           </h3>
           <p class="text-on-surface-variant font-body leading-relaxed max-w-xs">
             Von der ersten Röstung am Morgen bis zum letzten Negroni der Nacht. Wir feiern die Transition der Zeit.
@@ -358,7 +369,7 @@
         <div class="col-span-12 md:col-span-7">
           <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Über Uns</span>
           <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-8">
-            Dein Wohnzimmer<br/><span class="text-primary-container">in der Stadt.</span>
+            <span class="reveal" style="display:inline-block">Dein Wohnzimmer</span><br/><span class="text-primary-container reveal reveal-delay" style="display:inline-block">in der Stadt.</span>
           </h2>
           <p class="text-on-surface-variant leading-relaxed max-w-lg mb-4">
             Wir verwenden ausschließlich <span class="text-primary font-semibold">Bio Vollmilch und Bio Hafermilch</span>.
@@ -381,7 +392,7 @@
     <section id="menu" class="py-24 px-8 max-w-screen-2xl mx-auto">
       <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Karte</span>
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
-        Von Espresso<br/><span class="text-primary-container">bis Cuba Libre.</span>
+        <span class="reveal" style="display:inline-block">Von Espresso</span><br/><span class="text-primary-container reveal reveal-delay" style="display:inline-block">bis Cuba Libre.</span>
       </h2>
       <!-- Filter Pills (auto-generated from menu.json) -->
       <div id="menu-pills" class="flex flex-wrap gap-2 mb-12 md:flex-wrap"></div>
@@ -419,7 +430,7 @@
         .menu-row:last-child, .menu-row:last-of-type { border-bottom: none; }
         .menu-item { color: #eae1dd; font-size: 0.9rem; flex: 1; }
         .menu-detail { color: #9c8f78; font-size: 0.75rem; }
-        .menu-price { color: #d4c5ab; font-size: 0.9rem; white-space: nowrap; margin-left: 1rem; }
+        .menu-price { color: #d4c5ab; font-size: 0.85rem; white-space: nowrap; margin-left: 1rem; font-family: 'Interstate Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
         .menu-note { color: #9c8f78; font-size: 0.75rem; font-style: italic; margin-top: 1.5rem; line-height: 1.6; }
         .menu-grid { display: grid; grid-template-columns: 1fr repeat(3, 3.5rem); gap: 0; align-items: baseline; overflow: hidden; position: relative; top: -28px; margin-bottom: -28px; }
         .menu-grid-row > .g-name { position: relative; }
@@ -432,7 +443,7 @@
         .menu-grid-row { display: contents; }
         .menu-grid-row .g-name { color: #eae1dd; font-size: 0.9rem; padding: 0.35rem 0; }
         .menu-grid-row .g-name.menu-detail { }
-        .menu-grid-row .g-price { color: #d4c5ab; font-size: 0.9rem; text-align: right; padding: 0.35rem 0; }
+        .menu-grid-row .g-price { color: #d4c5ab; font-size: 0.85rem; text-align: right; padding: 0.35rem 0; font-family: 'Interstate Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
         .menu-grid-row .g-price.empty { color: transparent; }
         .menu-cat.hidden { display: none; }
         @media (max-width: 640px) {
@@ -564,7 +575,7 @@
     <section id="kontakt" class="py-24 px-8 max-w-screen-2xl mx-auto">
       <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Anfahrt & Kontakt</span>
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
-        Komm vorbei<br/><span class="text-primary-container">und bleib ein wenig.</span>
+        <span class="reveal" style="display:inline-block">Komm vorbei</span><br/><span class="text-primary-container reveal reveal-delay" style="display:inline-block">und bleib ein wenig.</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
@@ -627,7 +638,7 @@
     <section id="galerie" class="py-24 px-8 max-w-screen-2xl mx-auto">
       <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Galerie</span>
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
-        Ein Blick<br/><span class="text-primary-container">in unser Wohnzimmer.</span>
+        <span class="reveal" style="display:inline-block">Ein Blick</span><br/><span class="text-primary-container reveal reveal-delay" style="display:inline-block">in unser Wohnzimmer.</span>
       </h2>
       <div class="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3" id="gallery-grid"></div>
       <script>
@@ -750,6 +761,18 @@
       <p>Diese Datenschutzerklärung hat den Stand März 2025. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.</p>
     </div>
   </div>
+
+  <!-- Reveal animations -->
+  <script>
+    (function(){
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+    })();
+  </script>
 
   <!-- Scroll to top -->
   <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-surface-container-high text-primary-container flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 hover:bg-surface-container-highest" aria-label="Nach oben" type="button">
