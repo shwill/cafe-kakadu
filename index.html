@@ -26,6 +26,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
   <link rel="preload" href="fonts/epilogue-variable.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="preload" href="fonts/manrope-variable.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="fonts/manifold-extd-medium.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="fonts/transducer-extended-bold.woff2" as="font" type="font/woff2" crossorigin/>
   <style>
     @font-face {
       font-family: 'Epilogue';
@@ -38,6 +40,20 @@
       font-family: 'Manrope';
       src: url('fonts/manrope-variable.woff2') format('woff2');
       font-weight: 200 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Manifold Extd';
+      src: url('fonts/manifold-extd-medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Transducer Extended';
+      src: url('fonts/transducer-extended-bold.woff2') format('woff2');
+      font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
@@ -174,8 +190,8 @@
   <!-- TopAppBar -->
   <header class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-xl transition-colors duration-500">
     <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-      <a href="/" class="text-2xl font-black tracking-tighter text-primary-container font-headline uppercase">
-        Café Kakadu
+      <a href="/" class="text-2xl tracking-tight text-primary-container">
+        <span class="text-on-surface" style="font-family:'Manifold Extd',sans-serif;font-weight:500">Café</span> <span style="font-family:'Transducer Extended',sans-serif;font-weight:700">Kakadu</span>
       </a>
       <nav class="hidden md:flex gap-12 font-headline tracking-tight font-bold uppercase text-xs">
         <a class="text-stone-300 hover:text-primary transition-all duration-300 active:scale-95" href="#about">Über Uns</a>
@@ -232,18 +248,14 @@
         <!-- Left Content Column -->
         <div class="col-span-12 lg:col-span-6 flex flex-col justify-center order-2 lg:order-1 mt-12 lg:mt-0">
           <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-6 block">Die Kunst des Genießens</span>
-          <h1 class="font-headline text-7xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter text-on-background mb-8">
-            CAFÉ<br/>
-            <span class="text-primary-container">KAKADU</span>
+          <h1 class="text-6xl md:text-7xl lg:text-[7rem] leading-[0.7] md:leading-[0.7] tracking-tight text-on-background mb-8">
+            <span class="text-[0.8em]" style="font-family:'Manifold Extd',sans-serif;font-weight:500">Café</span><br/>
+            <span class="text-primary-container" style="font-family:'Transducer Extended',sans-serif;font-weight:700">Kakadu</span>
           </h1>
-          <div class="flex flex-col md:flex-row md:items-end gap-8 mb-12">
+          <div class="mb-12">
             <p class="font-headline text-2xl md:text-3xl italic text-on-surface-variant max-w-sm leading-tight">
               Kaffee am Tag.<br/>Drinks bei Nacht.
             </p>
-            <div class="h-[1px] w-24 bg-outline-variant/30 hidden md:block mb-4"></div>
-            <address class="not-italic font-label text-xs uppercase tracking-widest text-outline leading-loose">
-              Wasserstraße 1,<br/>77652 Offenburg
-            </address>
           </div>
           <div class="flex flex-wrap gap-6 items-center">
             <a href="#menu" class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-sm tracking-widest px-10 py-5 rounded-full shadow-2xl shadow-stone-900/20 active:translate-y-1 transition-all">
@@ -271,8 +283,8 @@
     <section class="py-24 px-8 max-w-screen-2xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         <div class="md:col-span-1 space-y-6">
-          <h3 class="font-headline text-4xl font-bold tracking-tighter uppercase leading-none">
-            Der Rhythmus<br/>Der Stadt
+          <h3 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9]">
+            Der Rhythmus<br/><span class="text-primary-container">des Tages</span>
           </h3>
           <p class="text-on-surface-variant font-body leading-relaxed max-w-xs">
             Von der ersten Röstung am Morgen bis zum letzten Negroni der Nacht. Wir feiern die Transition der Zeit.
