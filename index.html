@@ -174,7 +174,8 @@
     "hasMenu": "https://kakadu.artificery.io/#menu",
     "image": "https://kakadu.artificery.io/og-image.png",
     "sameAs": [
-      "https://www.facebook.com/cafekakadu",
+      "https://www.facebook.com/cafekakadu/?locale=de_DE",
+      "https://www.instagram.com/cafekakadu/",
       "https://www.cafe-kakadu.de"
     ],
     "founder": {
@@ -199,7 +200,13 @@
         <a class="text-stone-300 hover:text-primary transition-all duration-300 active:scale-95" href="#kontakt">Anfahrt</a>
         <a class="text-stone-300 hover:text-primary transition-all duration-300 active:scale-95" href="#galerie">Galerie</a>
       </nav>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-4">
+        <a href="https://www.facebook.com/cafekakadu/?locale=de_DE" target="_blank" rel="noopener" class="hidden md:inline-flex text-stone-400 hover:text-primary transition-colors" aria-label="Facebook">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cafekakadu/" target="_blank" rel="noopener" class="hidden md:inline-flex text-stone-400 hover:text-primary transition-colors" aria-label="Instagram">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
         <a href="tel:078176410" class="hidden md:inline-flex bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold uppercase text-[10px] tracking-widest px-6 py-3 rounded-full active:scale-95 transition-all">
           0781 / 76410
         </a>
@@ -219,6 +226,10 @@
         <a class="text-stone-300 hover:text-primary transition-colors" href="#kontakt" onclick="closeMobileNav()">Anfahrt</a>
         <a class="text-stone-300 hover:text-primary transition-colors" href="#galerie" onclick="closeMobileNav()">Galerie</a>
         <a href="tel:078176410" class="text-primary-container font-bold" onclick="closeMobileNav()">0781 / 76410</a>
+        <div class="flex gap-4 mt-2">
+          <a href="https://www.facebook.com/cafekakadu/?locale=de_DE" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition-colors" onclick="closeMobileNav()">Facebook</a>
+          <a href="https://www.instagram.com/cafekakadu/" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition-colors" onclick="closeMobileNav()">Instagram</a>
+        </div>
       </div>
     </nav>
   </header>
@@ -553,7 +564,7 @@
     <section id="kontakt" class="py-24 px-8 max-w-screen-2xl mx-auto">
       <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Anfahrt & Kontakt</span>
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
-        Komm vorbei.<br/><span class="text-primary-container">Wir freuen uns auf dich.</span>
+        Komm vorbei<br/><span class="text-primary-container">und bleib ein wenig.</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
@@ -575,10 +586,14 @@
             <p>Wasserstraße 1, 77652 Offenburg</p>
             <p>Tel: <a href="tel:078176410" class="text-primary hover:underline">0781 / 76410</a></p>
             <p>Inhaber: Sebastian Mußler</p>
-            <a href="https://www.facebook.com/cafekakadu" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors mt-4 font-headline font-bold uppercase text-sm tracking-widest group">
-              Facebook
-              <span class="text-sm group-hover:translate-x-1 transition-transform inline-block">&rarr;</span>
-            </a>
+            <div class="flex gap-6 mt-4">
+              <a href="https://www.facebook.com/cafekakadu/?locale=de_DE" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-headline font-bold uppercase text-sm tracking-widest group">
+                Facebook <span class="text-sm group-hover:translate-x-1 transition-transform inline-block">&rarr;</span>
+              </a>
+              <a href="https://www.instagram.com/cafekakadu/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-headline font-bold uppercase text-sm tracking-widest group">
+                Instagram <span class="text-sm group-hover:translate-x-1 transition-transform inline-block">&rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
         <div class="rounded-xl overflow-hidden bg-surface-container relative min-h-[400px]" id="map-wrapper">
@@ -612,7 +627,7 @@
     <section id="galerie" class="py-24 px-8 max-w-screen-2xl mx-auto">
       <span class="font-label text-primary uppercase tracking-[0.3em] text-[10px] mb-4 block">Galerie</span>
       <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-[0.9] mb-12">
-        Einblicke.
+        Ein Blick<br/><span class="text-primary-container">in unser Wohnzimmer.</span>
       </h2>
       <div class="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3" id="gallery-grid"></div>
       <script>
@@ -646,7 +661,8 @@
         © 2025 Café Kakadu · Wasserstraße 1, Offenburg
       </div>
       <div class="flex gap-8">
-        <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-primary transition-all opacity-80 hover:opacity-100 cursor-pointer" href="https://www.facebook.com/cafekakadu" target="_blank" rel="noopener">Facebook</a>
+        <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-primary transition-all opacity-80 hover:opacity-100 cursor-pointer" href="https://www.facebook.com/cafekakadu/?locale=de_DE" target="_blank" rel="noopener">Facebook</a>
+        <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-primary transition-all opacity-80 hover:opacity-100 cursor-pointer" href="https://www.instagram.com/cafekakadu/" target="_blank" rel="noopener">Instagram</a>
         <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-primary transition-all opacity-80 hover:opacity-100 cursor-pointer" onclick="document.getElementById('modal-impressum').classList.add('open')">Impressum</a>
         <a class="font-label text-xs uppercase tracking-widest text-outline hover:text-primary transition-all opacity-80 hover:opacity-100 cursor-pointer" onclick="document.getElementById('modal-datenschutz').classList.add('open')">Datenschutz</a>
       </div>
@@ -735,5 +751,23 @@
     </div>
   </div>
 
+  <!-- Scroll to top -->
+  <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-surface-container-high text-primary-container flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 hover:bg-surface-container-highest" aria-label="Nach oben" type="button">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+  <script>
+    (function(){
+      var btn = document.getElementById('scroll-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          btn.style.opacity = '1';
+          btn.style.pointerEvents = 'auto';
+        } else {
+          btn.style.opacity = '0';
+          btn.style.pointerEvents = 'none';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
