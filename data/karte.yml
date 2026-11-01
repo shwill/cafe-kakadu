@@ -68,7 +68,7 @@ flyer:
           - {name: Süßer Sprudel, prices: [~, "2,80", "3,10"]}
           - {name: Red Bull, prices: [~, "4,00", ~]}
           - {name: Eistee Pfirsich, prices: [~, ~, "3,50"]}
-          - {name: Eistee Pfirsich Krug, detail: ca. 0,75 l, price: "6,50"}
+          - {name: Eistee Pfirsich Krug, detail: "ca. 0,75 l", price: "6,50"}
           - {name: Hausgemachte Limo, prices: [~, ~, "4,50"], link: sommer}
 
   - id: saefte
@@ -88,9 +88,9 @@ flyer:
           - {name: Saftschorle, prices: ["3,60", "3,90"]}
       - label: Hausgemacht
         items:
-          - {name: Ingwer-Zitrone, detail: 0,4 l, price: "4,50"}
-          - {name: Limette-Minze, detail: 0,4 l, price: "4,50"}
-          - {name: Grapefruit-Rosmarin, detail: 0,4 l, price: "4,50"}
+          - {name: Ingwer-Zitrone, detail: "0,4 l", price: "4,50"}
+          - {name: Limette-Minze, detail: "0,4 l", price: "4,50"}
+          - {name: Grapefruit-Rosmarin, detail: "0,4 l", price: "4,50"}
           - {name: Frisch gepresster Bio-Saft, detail: "0,3 l · Apfel, Karotte, Ingwer", price: "5,50"}
 
   - id: biere
@@ -316,9 +316,9 @@ inserts:
           - {name: Cappuccino Freddo, detail: "Espresso doppio mit Milch und Eis geshakt", price: "4,60"}
       - title: Hausgemachte Limos
         items:
-          - {name: Ingwer-Zitrone, detail: 0,4 l, price: "4,50"}
-          - {name: Grapefruit-Rosmarin, detail: 0,4 l, price: "4,50"}
-          - {name: Limette-Minze, detail: 0,4 l, price: "4,50"}
+          - {name: Ingwer-Zitrone, detail: "0,4 l", price: "4,50"}
+          - {name: Grapefruit-Rosmarin, detail: "0,4 l", price: "4,50"}
+          - {name: Limette-Minze, detail: "0,4 l", price: "4,50"}
           - {name: Frisch gepresster Bio-Saft, detail: "0,3 l · Apfel, Karotte, Ingwer", price: "5,50"}
       - title: Drinks
         items:

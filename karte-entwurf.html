@@ -83,25 +83,42 @@
   .hits { max-width: var(--strip); margin: .9rem auto 0; font-size: .8rem; color: var(--muted); }
 
   /* ---------- Der Faltflyer ---------- */
-  .stage { padding-block: 1.75rem 4rem; }
-  .strip { max-width: var(--strip); margin: 0 auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+  /* Horizontal-Modus: Abschnitt ist so hoch wie der Scrollweg, die Bühne bleibt kleben,
+     jede Seite klappt um ihre linke Kante (den Falz) nach rechts auf. */
+  .flyer { position: relative; }
+  .stage { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--navh, 52px)); height: calc(100svh - var(--navh, 52px) - env(safe-area-inset-top, 0px)); overflow: hidden; }
+  .track { position: absolute; left: 0; top: 16px; will-change: transform; }
   .panel {
-    position: relative; background: var(--paper); color: var(--ink);
-    padding: 2rem clamp(1.1rem, 4.5vw, 2.4rem) 2.2rem;
-    transform-origin: 50% 0; will-change: transform; scroll-margin-top: 5rem;
-    backface-visibility: hidden;
+    position: absolute; top: 0; width: var(--pw, 340px); color: var(--ink);
+    transform-origin: 0 50%; transform-style: preserve-3d; will-change: transform;
   }
-  .panel.sage { background: var(--paper-sage); }
-  .panel::after { /* Leinenstruktur des Kartons */
+  .face { position: relative; background: var(--paper); padding: 1.6rem 1.15rem 1.8rem; backface-visibility: hidden; -webkit-backface-visibility: hidden; min-height: 100%; }
+  .panel.sage .face { background: var(--paper-sage); }
+  .face::after { /* Leinenstruktur des Kartons */
     content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
     background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.018) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0,0,0,.015) 0 1px, transparent 1px 4px);
   }
-  .panel + .panel { box-shadow: inset 0 1px 0 rgba(0,0,0,.12), inset 0 10px 14px -12px rgba(0,0,0,.22); } /* Falz */
-  .shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,15,12,.0), rgba(20,15,12,.55)); opacity: 0; }
-  .panel:first-child { border-radius: 3px 3px 0 0; }
-  .panel:last-child { border-radius: 0 0 3px 3px; }
+  .face { box-shadow: 0 24px 40px -14px rgba(0,0,0,.5); }
+  .panel + .panel .face { box-shadow: inset 1px 0 0 rgba(0,0,0,.13), inset 12px 0 16px -14px rgba(0,0,0,.28), 0 24px 40px -14px rgba(0,0,0,.5); } /* Falz */
+  .back { position: absolute; inset: 0; background: linear-gradient(90deg, #ddd6c6, #e9e3d5); transform: rotateY(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(20,15,12,.5), rgba(20,15,12,.1)); opacity: 0; z-index: 2; }
+  .panel.folded { visibility: hidden; }
+  .stage-hint { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font: 600 .6rem/1 var(--f-body); letter-spacing: .22em; text-transform: uppercase; color: var(--muted); pointer-events: none; transition: opacity .3s; }
+  .pager { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); display: flex; gap: 6px; z-index: 40; background: rgba(22,19,17,.82); padding: 6px 9px; border-radius: 99px; }
+  .pager i { width: 6px; height: 6px; border-radius: 50%; background: rgba(224,217,184,.25); transition: background .3s, width .3s; }
+  .pager i.on { background: var(--olive); width: 16px; border-radius: 3px; }
 
-  .cover { min-height: 23rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.1rem; }
+  /* Flach-Modus (Suche, reduzierte Bewegung): Seiten untereinander */
+  .flyer.flat { height: auto !important; }
+  .flyer.flat .stage { position: static; height: auto; overflow: visible; padding-block: 1.75rem 3rem; }
+  .flyer.flat .track { position: static; transform: none !important; max-width: var(--strip); margin: 0 auto; display: grid; }
+  .flyer.flat .cover .face { min-height: 23rem !important; }
+  .flyer.flat .panel { position: relative; left: auto !important; width: auto; transform: none !important; visibility: visible; z-index: auto !important; }
+  .flyer.flat .face { padding-inline: clamp(1.1rem, 4.5vw, 2.4rem); }
+  .flyer.flat .back, .flyer.flat .shade, .flyer.flat .stage-hint, .flyer.flat .pager { display: none; }
+  .flyer.flat .panel + .panel .face { box-shadow: inset 0 1px 0 rgba(0,0,0,.12); }
+
+  .cover .face { min-height: 25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.1rem; }
   .emblem { width: 6.5rem; height: 6.5rem; border-radius: 50%; background: #d3cba0; display: grid; place-items: center; font: 700 2.6rem/1 var(--f-display); color: #4b4425; box-shadow: inset 0 0 0 6px #c9c093; }
   .cover .cafe { font: 400 1.3rem/1 var(--f-body); color: var(--ink-soft); letter-spacing: .02em; }
   .cover h2 { font: 700 clamp(2.2rem, 10vw, 3.4rem)/.9 var(--f-display); letter-spacing: -.01em; margin: -.6rem 0 0; color: #3a3330; }
@@ -115,16 +132,16 @@
   .p-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; position: relative; z-index: 1; }
   .p-head h2 { font: 800 1.2rem/1.1 var(--f-head); letter-spacing: .08em; text-transform: uppercase; margin: 0; }
   .p-head .sub { font: 300 .75rem var(--f-num); color: var(--ink-soft); }
-  .cols, .row { display: grid; grid-template-columns: minmax(0,1fr) repeat(var(--n, 1), 3.6rem); align-items: baseline; column-gap: .25rem; position: relative; z-index: 1; }
+  .cols, .row { display: grid; grid-template-columns: minmax(0,1fr) repeat(var(--n, 1), 2.85rem); align-items: baseline; column-gap: .25rem; position: relative; z-index: 1; }
   .cols { font: 300 .68rem var(--f-num); color: var(--ink-soft); margin-bottom: .2rem; }
   .cols span { text-align: right; }
   .row { padding: .32rem 0; }
   .row .nm { display: flex; align-items: baseline; gap: .4rem; min-width: 0; }
-  .row .nm b { font-weight: 600; font-size: .92rem; }
+  .row .nm b { font-weight: 600; font-size: .86rem; }
   .row .nm i { font-style: normal; font-size: .74rem; color: var(--ink-soft); }
   .row .nm .lead { flex: 1; min-width: .8rem; border-bottom: 1px dotted var(--leader); transform: translateY(-.25em); }
   .row .nm .txt { min-width: 0; }
-  .row .pr { font: 300 .88rem var(--f-num); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  .row .pr { font: 300 .8rem var(--f-num); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
   .row .pr.x { color: transparent; }
   .row .pr.x::before { content: "·"; color: var(--leader); }
   .row.span .pr { grid-column: 2 / -1; }
@@ -200,18 +217,15 @@
   [data-hidden="1"] { display: none !important; }
   mark { background: rgba(186,171,108,.45); color: inherit; border-radius: 2px; }
 
-  @media (max-width: 480px) {
-    .cols, .row { grid-template-columns: minmax(0,1fr) repeat(var(--n, 1), 2.85rem); }
-    .row .nm b { font-size: .86rem; }
-    .row .pr { font-size: .8rem; }
+  @media (min-width: 560px) {
+    .flyer.flat .cols, .flyer.flat .row { grid-template-columns: minmax(0,1fr) repeat(var(--n, 1), 3.6rem); }
   }
   @media (min-width: 900px) {
     .inserts { max-width: 1040px; grid-template-columns: 1fr 1fr; align-items: start; gap: 2.6rem; }
     .inserts .card.cocktail, .inserts .card.tea { grid-column: span 2; max-width: var(--strip); width: 100%; justify-self: center; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .panel, .card { transform: none !important; }
-    .shade { display: none; }
+    .card { transform: none !important; }
     .hint svg, .marquee span { animation: none; }
   }
 </style>
@@ -245,9 +259,10 @@
 
   <p class="hits wrap" id="hits" hidden></p>
 
-  <section class="stage wrap">
-    <div class="strip" id="strip">
-      <article class="panel cover" id="cover">
+  <section class="flyer" id="flyer">
+   <div class="stage wrap" id="stage">
+    <div class="track" id="strip">
+      <article class="panel cover" id="cover" data-sec><div class="face">
         <div class="emblem" aria-hidden="true">K</div>
         <div>
           <div class="cafe">Café</div>
@@ -258,9 +273,11 @@
         <div class="hint" aria-hidden="true">Scrollen zum Aufklappen
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </div>
-        <div class="shade"></div>
-      </article>
+      </div><div class="back"></div><div class="shade"></div></article>
     </div>
+    <div class="pager" id="pager" aria-hidden="true"></div>
+    <div class="stage-hint" id="stage-hint">Weiterscrollen zum Aufklappen</div>
+   </div>
   </section>
 
   <section class="wrap" id="einlagen">
@@ -302,14 +319,14 @@
 
   function panelHTML(p) {
     var n = p.columns ? p.columns.length : 1;
-    var h = '<article class="panel' + (p.tint === 'sage' ? ' sage' : '') + '" id="' + p.id + '" data-sec style="--n:' + n + '">';
+    var h = '<article class="panel' + (p.tint === 'sage' ? ' sage' : '') + '" id="' + p.id + '" data-sec style="--n:' + n + '"><div class="face">';
     h += '<div class="p-head"><h2>' + esc(p.title) + '</h2>' + (p.subtitle ? '<span class="sub">' + esc(p.subtitle) + '</span>' : '') + '</div>';
     if (p.columns) h += '<div class="cols"><span></span>' + p.columns.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div>';
     p.groups.forEach(function (g) {
       h += '<div data-grp>' + (g.label ? '<div class="grp">' + esc(g.label) + '</div>' : '') + g.items.map(function (it) { return rowHTML(it, n); }).join('') + '</div>';
     });
     if (p.notes) h += '<ul class="notes">' + p.notes.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
-    return h + '<div class="shade"></div></article>';
+    return h + '</div><div class="back"></div><div class="shade"></div></article>';
   }
 
   function cocktailHTML(ins) {
@@ -384,49 +401,112 @@
     initSearch();
   }
 
-  /* ---------- Bewegung: Seiten falten sich beim Scrollen auf ---------- */
+  /* ---------- Bewegung: der Flyer klappt beim Scrollen horizontal auf ----------
+     Scrollweg des Abschnitts = je Seite eine Aufklapp-Strecke (U) plus, falls die Seite höher
+     ist als die Bühne, eine Lese-Strecke, in der die Seite nach oben wandert. */
   function initMotion() {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var panels = [].slice.call(document.querySelectorAll('.panel'));
+    var flyer = document.getElementById('flyer'), stage = document.getElementById('stage'), track = document.getElementById('strip');
+    var nav = document.querySelector('.nav'), pager = document.getElementById('pager'), hint = document.getElementById('stage-hint');
+    var panels = [].slice.call(track.querySelectorAll('.panel'));
     var cards = [].slice.call(document.querySelectorAll('.card'));
-    var secs = [].slice.call(document.querySelectorAll('[data-sec]'));
     var chipEls = {}; [].forEach.call(document.querySelectorAll('.chip'), function (c) { chipEls[c.dataset.for] = c; });
     var bar = document.getElementById('progress');
-    var strip = document.getElementById('strip');
-    var lastActive = null, ticking = false;
-    var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
-    var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+    var clamp = function (v, a, b) { a = a == null ? 0 : a; b = b == null ? 1 : b; return v < a ? a : v > b ? b : v; };
+    var ease = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+    var lerp = function (a, b, t) { return a + (b - a) * t; };
+    var L = null, ticking = false, lastActive = null;
+    pager.innerHTML = panels.map(function () { return '<i></i>'; }).join('');
+    var dots = [].slice.call(pager.children);
+
+    function layout() {
+      document.documentElement.style.setProperty('--navh', nav.offsetHeight + 'px');
+      if (flyer.classList.contains('flat')) { L = null; flyer.style.height = ''; return; }
+      var vw = document.documentElement.clientWidth, vh = window.innerHeight;
+      var gutter = Math.max(16, parseFloat(getComputedStyle(stage).paddingLeft) || 16);
+      var pw = vw < 640 ? Math.min(vw - gutter * 2 - 26, 400) : Math.round(clamp(vw * 0.27, 300, 360));
+      track.style.setProperty('--pw', pw + 'px');
+      var stageH = stage.clientHeight - 16 - 56;              /* oben 16px, unten Platz für Pager */
+      var U = Math.max(vh * 0.75, 420);                        /* Scrollweg pro Aufklappen */
+      var segs = [], pos = 0;
+      panels[0].firstElementChild.style.minHeight = Math.min(stageH, 640) + 'px';   /* Titelseite so hoch wie die Bühne */
+      panels.forEach(function (el, k) {
+        el.style.left = (k * pw) + 'px';
+        var over = Math.max(0, el.offsetHeight - stageH);
+        var seg = { start: pos, unfold: k ? U : 0, over: over, dwell: k ? 0 : vh * 0.3 };
+        pos += seg.unfold + over + seg.dwell; seg.end = pos; segs.push(seg);
+      });
+      var tail = vh * 0.35;
+      flyer.style.height = (pos + tail + stage.offsetHeight) + 'px';
+      /* Kamera: aufgeklappter Teil zentriert, sonst rechte Kante der aktuellen Seite im Bild */
+      var cams = panels.map(function (_, k) { var w = (k + 1) * pw; return Math.max(w / 2 - vw / 2, w - (vw - gutter)); });
+      L = { pw: pw, segs: segs, cams: cams, total: pos, vw: vw };
+    }
+
+    function stateAt(s) {
+      /* liefert aktuelle Seite k, Aufklapp-Fortschritt t (0..1) und vertikale Verschiebung */
+      var segs = L.segs, n = segs.length;
+      for (var k = 0; k < n; k++) {
+        var g = segs[k];
+        if (s < g.end || k === n - 1) {
+          var inUnfold = s - g.start;
+          if (g.unfold && inUnfold < g.unfold) {
+            var t = ease(clamp(inUnfold / g.unfold));
+            return { k: k, t: t, ty: lerp(-segs[k - 1].over, 0, t) };
+          }
+          return { k: k, t: 1, ty: -clamp(inUnfold - g.unfold, 0, g.over) };
+        }
+      }
+    }
 
     function frame() {
       ticking = false;
       var vh = window.innerHeight;
-      if (!reduce) {
-        panels.forEach(function (el, i) {
-          if (i === 0) return;
-          var top = el.getBoundingClientRect().top;
-          var p = ease(clamp((vh - top) / (vh * 0.55)));
-          var dir = i % 2 ? 1 : -1;               /* Berg- und Talfalz im Wechsel */
-          var ang = (1 - p) * 78 * dir;
-          el.style.transform = p >= 1 ? 'none' : 'perspective(1300px) rotateX(' + ang.toFixed(2) + 'deg)';
-          el.querySelector('.shade').style.opacity = ((1 - p) * (dir > 0 ? 0.9 : 0.45)).toFixed(3);
+      if (L) {
+        var s = clamp(window.scrollY - flyerTop(), 0, L.total);
+        var st = stateAt(s), k = st.k, t = st.t;
+        var camX = k ? lerp(L.cams[k - 1], L.cams[k], t) : L.cams[0];
+        track.style.transform = 'translate3d(' + (-camX).toFixed(1) + 'px,' + st.ty.toFixed(1) + 'px,0)';
+        panels.forEach(function (el, j) {
+          var shade = el.lastElementChild;
+          el.style.zIndex = j;
+          if (j < k || (j === k && t >= 1)) {
+            el.style.transform = 'none'; el.classList.remove('folded');
+            /* auf dem Handy liegen die bereits gelesenen Seiten links im Schatten */
+            shade.style.opacity = L.vw < 640 && (j < k - 1 || (j === k - 1 && t > 0)) ? (j === k - 1 ? 0.55 * t : 0.55) : 0;
+            return;
+          }
+          if (j > k) { el.classList.add('folded'); return; }
+          if (t < 0.5) el.style.zIndex = j - 2;   /* kommt unter der Vorseite hervor */
+          /* j === k: Seite dreht um ihre linke Kante von -180° (auf der Vorseite liegend) nach 0° */
+          el.classList.remove('folded');
+          var ang = -180 * (1 - t);
+          el.style.transform = 'perspective(' + Math.round(L.pw * 4.5) + 'px) rotateY(' + ang.toFixed(2) + 'deg)';
+          shade.style.opacity = (Math.sin(Math.PI * (1 - t)) * 0.9).toFixed(3);
         });
+        dots.forEach(function (d, j) { d.classList.toggle('on', j === (t > 0.5 ? k : Math.max(0, k - 1))); });
+        hint.style.opacity = s > 40 ? 0 : 1;
+      }
+      if (!reduce) {
         cards.forEach(function (el) {
           var top = el.getBoundingClientRect().top;
-          var p = ease(clamp((vh - top) / (vh * 0.6)));
+          var p = 1 - Math.pow(1 - clamp((vh - top) / (vh * 0.6)), 3);
           var side = +el.dataset.side;
-          var tx = (1 - p) * 55 * side, rot = (1 - p) * 9 * side + side * 0.7;
-          el.style.transform = 'translateX(' + tx.toFixed(2) + '%) rotate(' + rot.toFixed(2) + 'deg)';
+          el.style.transform = 'translateX(' + ((1 - p) * 55 * side).toFixed(2) + '%) rotate(' + ((1 - p) * 9 * side + side * 0.7).toFixed(2) + 'deg)';
         });
       }
       /* Fortschritt über die ganze Karte */
-      var first = strip.getBoundingClientRect().top + window.scrollY;
-      var last = document.getElementById('inserts').getBoundingClientRect().bottom + window.scrollY - vh;
-      bar.style.transform = 'scaleX(' + clamp((window.scrollY - first + vh * 0.3) / (last - first)).toFixed(4) + ')';
+      var first = flyerTop(), last = document.getElementById('inserts').getBoundingClientRect().bottom + window.scrollY - vh;
+      bar.style.transform = 'scaleX(' + clamp((window.scrollY - first) / (last - first)).toFixed(4) + ')';
       /* aktives Kapitel */
       var active = null;
-      for (var i = 0; i < secs.length; i++) {
-        if (secs[i].offsetParent === null) continue;
-        if (secs[i].getBoundingClientRect().top < vh * 0.42) active = secs[i].id; else break;
+      if (L && window.scrollY >= flyerTop() - 2 && window.scrollY < flyerTop() + L.total + vh * 0.3) {
+        var cur = stateAt(clamp(window.scrollY - flyerTop(), 0, L.total));
+        active = panels[cur.t > 0.5 ? cur.k : Math.max(0, cur.k - 1)].id;
+      } else {
+        [].forEach.call(document.querySelectorAll('[data-sec]'), function (el) {
+          if (el.offsetParent !== null && el.getBoundingClientRect().top < vh * 0.42) active = el.id;
+        });
       }
       if (active !== lastActive) {
         if (lastActive && chipEls[lastActive]) chipEls[lastActive].classList.remove('on');
@@ -437,11 +517,30 @@
         lastActive = active;
       }
     }
+    function flyerTop() { return flyer.getBoundingClientRect().top + window.scrollY - nav.offsetHeight; }
     function req() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+    function relayout() { layout(); frame(); }
+
+    /* Kapitel-Chips im Flyer: zur Stelle scrollen, an der die Seite ganz aufgeklappt ist */
+    document.getElementById('chips').addEventListener('click', function (e) {
+      var a = e.target.closest('.chip'); if (!a || !L) return;
+      var k = panels.findIndex(function (p) { return p.id === a.dataset.for; });
+      if (k < 0) return;
+      e.preventDefault();
+      window.scrollTo({ top: flyerTop() + L.segs[k].start + L.segs[k].unfold + 1, behavior: reduce ? 'auto' : 'smooth' });
+    });
+    /* Querverweise und Hash-Sprünge zu Flyerseiten ebenso */
+    window.addEventListener('hashchange', function () {
+      var k = panels.findIndex(function (p) { return '#' + p.id === location.hash; });
+      if (k >= 0 && L) window.scrollTo({ top: flyerTop() + L.segs[k].start + L.segs[k].unfold + 1 });
+    });
+
+    if (reduce) flyer.classList.add('flat');
     window.addEventListener('scroll', req, { passive: true });
-    window.addEventListener('resize', req);
-    frame();
-    window.__kakaduFrame = req;
+    window.addEventListener('resize', relayout);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+    relayout();
+    window.__kakaduFlat = function (on) { flyer.classList.toggle('flat', on || reduce); relayout(); };
   }
 
   /* ---------- Suche ---------- */
@@ -476,7 +575,7 @@
       });
       hits.hidden = !t;
       hits.textContent = count ? count + (count === 1 ? ' Treffer' : ' Treffer') + ' für „' + q.value.trim() + '“' : 'Nichts gefunden für „' + q.value.trim() + '“. Versuch es mit einer Zutat oder Sorte.';
-      if (window.__kakaduFrame) window.__kakaduFrame();
+      if (window.__kakaduFlat) window.__kakaduFlat(!!t);
     }
   }
 

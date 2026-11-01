@@ -292,8 +292,7 @@
       },
       {
        "name": "Eistee Pfirsich Krug",
-       "detail": "ca. 0",
-       "75 l": null,
+       "detail": "ca. 0,75 l",
        "price": "6,50"
       },
       {
@@ -392,20 +391,17 @@
      "items": [
       {
        "name": "Ingwer-Zitrone",
-       "detail": 0,
-       "4 l": null,
+       "detail": "0,4 l",
        "price": "4,50"
       },
       {
        "name": "Limette-Minze",
-       "detail": 0,
-       "4 l": null,
+       "detail": "0,4 l",
        "price": "4,50"
       },
       {
        "name": "Grapefruit-Rosmarin",
-       "detail": 0,
-       "4 l": null,
+       "detail": "0,4 l",
        "price": "4,50"
       },
       {
@@ -1275,20 +1271,17 @@
      "items": [
       {
        "name": "Ingwer-Zitrone",
-       "detail": 0,
-       "4 l": null,
+       "detail": "0,4 l",
        "price": "4,50"
       },
       {
        "name": "Grapefruit-Rosmarin",
-       "detail": 0,
-       "4 l": null,
+       "detail": "0,4 l",
        "price": "4,50"
       },
       {
        "name": "Limette-Minze",
-       "detail": 0,
-       "4 l": null,
+       "detail": "0,4 l",
        "price": "4,50"
       },
       {
