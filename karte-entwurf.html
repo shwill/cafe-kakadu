@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kakadu Faltkarte</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<style>
+  @font-face { font-family: 'Epilogue'; src: url('fonts/epilogue-variable.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+  @font-face { font-family: 'Manrope'; src: url('fonts/manrope-variable.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
+  @font-face { font-family: 'Interstate Mono'; src: url('fonts/interstate-mono-light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+  @font-face { font-family: 'Transducer Extended'; src: url('fonts/transducer-extended-bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+  /* Layout: ein Leporello auf dem Cafétisch. Ein schmaler Papierstreifen faltet sich beim Scrollen
+     Seite für Seite auf, danach werden die vier Einlagen seitlich herausgezogen. */
+  :root {
+    color-scheme: dark;
+    --ground: #161311;           /* Espresso, wie die Website */
+    --ground-2: #463731;
+    --bar: rgba(22, 19, 17, .92);
+    --line: rgba(156, 143, 120, .28);
+    --text: #eae1dd;
+    --muted: #9c8f78;
+    --olive: #baab6c;            /* Kakadu-Oliv aus dem Logo */
+    --olive-hi: #e0d9b8;
+
+    --paper: #f1ece0;            /* Flyer-Papier */
+    --paper-sage: #e4e3c3;       /* grünliche Säfte-Seite */
+    --ink: #2c2623;
+    --ink-soft: #6f655a;
+    --ink-olive: #6f6334;
+    --leader: rgba(44, 38, 35, .32);
+
+    --f-display: 'Transducer Extended', 'Epilogue', 'Arial Black', sans-serif;
+    --f-head: 'Epilogue', 'Helvetica Neue', Arial, sans-serif;
+    --f-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+    --f-num: 'Interstate Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+    --strip: 620px;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: linear-gradient(267deg, #110f0d 0%, var(--ground-2) 100%) fixed, var(--ground);
+    color: var(--text);
+    font: 400 15px/1.5 var(--f-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--ground); }
+  main { overflow-x: clip; }
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; border-radius: 4px; }
+
+  /* ---------- Kopf ---------- */
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.1rem; max-width: 1100px; margin: 0 auto; }
+  .brand { font: 700 .8rem/1 var(--f-display); letter-spacing: .06em; text-transform: uppercase; color: var(--olive-hi); text-decoration: none; }
+  .badge { font: 600 .65rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: .45rem .8rem; }
+  .hero { max-width: var(--strip); margin: 0 auto; padding-block: 2.5rem 2rem; }
+  .eyebrow { font: 600 .65rem/1 var(--f-body); letter-spacing: .3em; text-transform: uppercase; color: var(--olive-hi); }
+  .hero h1 { font: 900 clamp(2.4rem, 9vw, 3.6rem)/.92 var(--f-head); letter-spacing: -.035em; margin: .9rem 0 1rem; text-wrap: balance; }
+  .hero h1 span { color: var(--olive); display: block; }
+  .hero p { color: #d4c5ab; margin: 0; max-width: 46ch; }
+
+  /* ---------- Sticky-Navigation ---------- */
+  .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bar); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-in { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: .5rem; padding-block: .55rem; }
+  .chips { display: flex; gap: .35rem; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; scroll-behavior: smooth; mask-image: linear-gradient(90deg, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); padding-right: 2rem; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: none; font: 700 .62rem/1 var(--f-head); letter-spacing: .14em; text-transform: uppercase; color: #d4c5ab; background: #2e2927; border: 0; border-radius: 99px; padding: .6rem .85rem; cursor: pointer; text-decoration: none; transition: background .25s, color .25s; }
+  .chip:hover { color: var(--olive-hi); }
+  .chip.on { background: var(--olive); color: #2a2410; }
+  .chip-sep { flex: none; width: 1px; background: var(--line); margin: .25rem .2rem; }
+  .search { flex: none; display: flex; align-items: center; background: #2e2927; border-radius: 99px; height: 2rem; padding: 0 .3rem 0 .75rem; transition: width .3s; width: 2.2rem; overflow: hidden; }
+  .search.open { width: min(15rem, 46vw); }
+  .search input { background: none; border: 0; color: var(--text); font: 500 .85rem var(--f-body); width: 100%; min-width: 0; outline: none; }
+  .search button { flex: none; background: none; border: 0; color: #d4c5ab; cursor: pointer; width: 1.6rem; height: 1.6rem; display: grid; place-items: center; padding: 0; margin-left: -.55rem; }
+  .search.open button { margin-left: 0; }
+  .progress { height: 2px; background: var(--olive); transform-origin: left; transform: scaleX(0); }
+  .hits { max-width: var(--strip); margin: .9rem auto 0; font-size: .8rem; color: var(--muted); }
+
+  /* ---------- Der Faltflyer ---------- */
+  .stage { padding-block: 1.75rem 4rem; }
+  .strip { max-width: var(--strip); margin: 0 auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+  .panel {
+    position: relative; background: var(--paper); color: var(--ink);
+    padding: 2rem clamp(1.1rem, 4.5vw, 2.4rem) 2.2rem;
+    transform-origin: 50% 0; will-change: transform; scroll-margin-top: 5rem;
+    backface-visibility: hidden;
+  }
+  .panel.sage { background: var(--paper-sage); }
+  .panel::after { /* Leinenstruktur des Kartons */
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.018) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0,0,0,.015) 0 1px, transparent 1px 4px);
+  }
+  .panel + .panel { box-shadow: inset 0 1px 0 rgba(0,0,0,.12), inset 0 10px 14px -12px rgba(0,0,0,.22); } /* Falz */
+  .shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(20,15,12,.0), rgba(20,15,12,.55)); opacity: 0; }
+  .panel:first-child { border-radius: 3px 3px 0 0; }
+  .panel:last-child { border-radius: 0 0 3px 3px; }
+
+  .cover { min-height: 23rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.1rem; }
+  .emblem { width: 6.5rem; height: 6.5rem; border-radius: 50%; background: #d3cba0; display: grid; place-items: center; font: 700 2.6rem/1 var(--f-display); color: #4b4425; box-shadow: inset 0 0 0 6px #c9c093; }
+  .cover .cafe { font: 400 1.3rem/1 var(--f-body); color: var(--ink-soft); letter-spacing: .02em; }
+  .cover h2 { font: 700 clamp(2.2rem, 10vw, 3.4rem)/.9 var(--f-display); letter-spacing: -.01em; margin: -.6rem 0 0; color: #3a3330; }
+  .cover .kind { font: 800 .8rem/1 var(--f-head); letter-spacing: .35em; text-transform: uppercase; color: var(--ink); }
+  .cover .kind::before, .cover .kind::after { content: "—"; margin: 0 .6em; color: var(--ink-soft); letter-spacing: 0; }
+  .cover .meta { font-size: .78rem; color: var(--ink-soft); line-height: 1.7; }
+  .hint { display: flex; flex-direction: column; align-items: center; gap: .3rem; margin-top: .8rem; font: 600 .62rem/1 var(--f-body); letter-spacing: .22em; text-transform: uppercase; color: var(--ink-olive); }
+  .hint svg { animation: nudge 1.8s ease-in-out infinite; }
+  @keyframes nudge { 50% { transform: translateY(5px); } }
+
+  .p-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; position: relative; z-index: 1; }
+  .p-head h2 { font: 800 1.2rem/1.1 var(--f-head); letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+  .p-head .sub { font: 300 .75rem var(--f-num); color: var(--ink-soft); }
+  .cols, .row { display: grid; grid-template-columns: minmax(0,1fr) repeat(var(--n, 1), 3.6rem); align-items: baseline; column-gap: .25rem; position: relative; z-index: 1; }
+  .cols { font: 300 .68rem var(--f-num); color: var(--ink-soft); margin-bottom: .2rem; }
+  .cols span { text-align: right; }
+  .row { padding: .32rem 0; }
+  .row .nm { display: flex; align-items: baseline; gap: .4rem; min-width: 0; }
+  .row .nm b { font-weight: 600; font-size: .92rem; }
+  .row .nm i { font-style: normal; font-size: .74rem; color: var(--ink-soft); }
+  .row .nm .lead { flex: 1; min-width: .8rem; border-bottom: 1px dotted var(--leader); transform: translateY(-.25em); }
+  .row .nm .txt { min-width: 0; }
+  .row .pr { font: 300 .88rem var(--f-num); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  .row .pr.x { color: transparent; }
+  .row .pr.x::before { content: "·"; color: var(--leader); }
+  .row.span .pr { grid-column: 2 / -1; }
+  .jump { display: inline-block; margin-left: .35rem; font: 700 .58rem/1 var(--f-head); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-olive); text-decoration: none; border: 1px solid currentColor; border-radius: 99px; padding: .22rem .45rem; vertical-align: .12em; white-space: nowrap; }
+  .grp { font: 800 .7rem/1 var(--f-head); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-olive); margin: 1.3rem 0 .35rem; position: relative; z-index: 1; }
+  .notes { margin: 1.3rem 0 0; padding: 0; list-style: none; font-size: .76rem; color: var(--ink-soft); position: relative; z-index: 1; }
+  .notes li + li { margin-top: .2rem; }
+
+  /* ---------- Einlagen ---------- */
+  .inserts-head { max-width: var(--strip); margin: 0 auto; padding-block: 1rem 2.2rem; }
+  .inserts-head h2 { font: 900 clamp(2rem, 7vw, 2.8rem)/.95 var(--f-head); letter-spacing: -.03em; margin: .8rem 0 .6rem; }
+  .inserts-head p { margin: 0; color: #d4c5ab; max-width: 44ch; }
+  .inserts { display: grid; gap: 2.4rem; max-width: var(--strip); margin: 0 auto; padding-bottom: 5rem; }
+  .card { position: relative; border-radius: 3px; padding: 2.2rem clamp(1.1rem, 5vw, 2.6rem) 2.4rem; box-shadow: 0 26px 50px rgba(0,0,0,.5); will-change: transform; scroll-margin-top: 5rem; }
+  .card h3 { margin: 0 0 .3rem; }
+  .card .sec-t { margin: 1.8rem 0 .9rem; }
+  .card .row .nm b { font-size: .9rem; }
+
+  /* Cocktails: dunkles Rotbraun, Lachs-Schrift */
+  .card.cocktail { background: linear-gradient(180deg, #4d3632, #3f2c29); color: #fff; --leader: rgba(240, 168, 140, .45); }
+  .cocktail h3, .cocktail .sec-t { font: 800 1.35rem/1 var(--f-head); letter-spacing: .06em; text-transform: uppercase; color: #f3b49b; text-align: center; }
+  .cocktail .row { padding: .5rem 0; }
+  .cocktail .row .nm b { font-family: var(--f-head); font-weight: 800; letter-spacing: .02em; text-transform: uppercase; }
+  .cocktail .ing { grid-column: 1 / -1; font-size: .8rem; color: #f0a88c; margin-top: .05rem; }
+  .cocktail .tag { font-size: .66rem; color: rgba(255,255,255,.55); }
+
+  /* Tees: Aubergine, gelbe Akzente */
+  .card.tea { background: linear-gradient(180deg, #4e2a35, #42232c); color: #f4efe6; }
+  .tea h3 { font: 800 1.9rem/1 var(--f-head); text-transform: uppercase; color: #dcd775; letter-spacing: .02em; }
+  .tea .price-note { font: 800 .82rem/1 var(--f-head); letter-spacing: .06em; text-transform: uppercase; }
+  .tea .price-note span { font-family: var(--f-num); font-weight: 300; letter-spacing: 0; }
+  .tea-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.6rem 2rem; margin-top: 1.6rem; }
+  .tea-grid h4 { margin: 0 0 .5rem; font: 800 1.05rem/1.1 var(--f-head); text-transform: uppercase; letter-spacing: .03em; }
+  .tea-grid h4 small { display: block; font: 500 .72rem/1.3 var(--f-body); text-transform: none; letter-spacing: 0; color: rgba(244,239,230,.65); margin-top: .2rem; }
+  .tea-grid ul { list-style: none; margin: 0; padding: 0; }
+  .tea-grid li { font: 800 .8rem/1.25 var(--f-head); text-transform: uppercase; letter-spacing: .04em; color: #dfe6e6; padding: .22rem 0; }
+  .tea-grid li .bio { color: #dcd775; font-weight: 500; margin-left: .3em; }
+  .tea-grid li small { display: block; font: 500 .72rem/1.35 var(--f-body); text-transform: none; letter-spacing: 0; color: rgba(244,239,230,.65); }
+  .steep { display: inline-flex; align-items: center; gap: .35rem; }
+  .steep svg { flex: none; }
+
+  /* Speisen: Karton hell, zentriert, Schiefer & Mauve */
+  .card.food { background: #edeee6; color: #3e5566; text-align: center; }
+  .food h3, .food .sec-t { font: 800 .95rem/1 var(--f-head); letter-spacing: .1em; text-transform: uppercase; color: #8a6c70; }
+  .food h3::before, .food h3::after, .food .sec-t::before, .food .sec-t::after { content: " – "; }
+  .dish { padding: .55rem 0; }
+  .dish b { font: 800 .98rem/1.2 var(--f-head); letter-spacing: .04em; text-transform: uppercase; }
+  .dish .pr { font: 300 .9rem var(--f-num); margin-left: .35rem; white-space: nowrap; }
+  .dish .vg { font: 700 .6rem/1 var(--f-head); letter-spacing: .14em; text-transform: uppercase; color: #5f7d4f; border: 1px solid currentColor; border-radius: 99px; padding: .18rem .4rem; margin-left: .35rem; vertical-align: .15em; }
+  .dish small { display: block; font-size: .82rem; color: #4d5c66; margin-top: .1rem; }
+  .food .sep { margin: 1.4rem auto 0; color: #8a6c70; letter-spacing: .4em; }
+  .food .notes { color: #4d5c66; text-transform: uppercase; letter-spacing: .04em; font-size: .7rem; line-height: 1.5; }
+  .food .notes li + li { margin-top: .7rem; }
+
+  /* Sommer: hell, Gold & Rot */
+  .card.summer { background: #f0eee6; color: #3b3a35; text-align: center; overflow: hidden; }
+  .summer h3, .summer .sec-t { font: 800 .82rem/1 var(--f-head); letter-spacing: .12em; text-transform: uppercase; color: #3b3a35; }
+  .summer .sun { display: block; margin: 0 auto .8rem; }
+  .summer .dish b { color: #3b3a35; font-size: .92rem; }
+  .summer .dish .pr { color: #b17b3a; }
+  .summer .dish small { color: #6b685e; text-transform: uppercase; font-size: .68rem; letter-spacing: .06em; }
+  .summer .limo b { color: #b17b3a; }
+  .marquee { margin: 1.6rem calc(-1 * clamp(1.1rem, 5vw, 2.6rem)) 1rem; overflow: hidden; white-space: nowrap; font: 800 1rem/1 var(--f-head); letter-spacing: .04em; color: #c8323b; }
+  .marquee span { display: inline-block; animation: run 18s linear infinite; }
+  .marquee span i { font-style: normal; color: #e05a55; }
+  @keyframes run { to { transform: translateX(-50%); } }
+  .summer .drinks .dish b { color: #c8323b; }
+  .summer .drinks .dish small { text-transform: none; letter-spacing: 0; font-size: .82rem; }
+
+  .foot { max-width: var(--strip); margin: 0 auto; padding-block: 1rem 3rem; border-top: 1px solid var(--line); font-size: .78rem; color: var(--muted); display: grid; gap: .4rem; }
+  .foot a { color: var(--olive-hi); }
+
+  [data-hidden="1"] { display: none !important; }
+  mark { background: rgba(186,171,108,.45); color: inherit; border-radius: 2px; }
+
+  @media (max-width: 480px) {
+    .cols, .row { grid-template-columns: minmax(0,1fr) repeat(var(--n, 1), 2.85rem); }
+    .row .nm b { font-size: .86rem; }
+    .row .pr { font-size: .8rem; }
+  }
+  @media (min-width: 900px) {
+    .inserts { max-width: 1040px; grid-template-columns: 1fr 1fr; align-items: start; gap: 2.6rem; }
+    .inserts .card.cocktail, .inserts .card.tea { grid-column: span 2; max-width: var(--strip); width: 100%; justify-self: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .panel, .card { transform: none !important; }
+    .shade { display: none; }
+    .hint svg, .marquee span { animation: none; }
+  }
+</style>
+
+</head>
+<body>
+<main>
+  <header class="top wrap">
+    <a class="brand" href="./">Café Kakadu</a>
+    <span class="badge">Entwurf</span>
+  </header>
+
+  <section class="hero wrap">
+    <span class="eyebrow">Die Karte</span>
+    <h1>Einmal aufklappen,<span>bitte.</span></h1>
+    <p>Der Getränkeflyer vom Tisch, Seite für Seite zum Aufblättern. Die Einlagen mit Cocktails, Tees, Kuchen und der Sommerkarte liegen am Ende.</p>
+  </section>
+
+  <nav class="nav wrap" aria-label="Kapitel der Karte">
+    <div class="nav-in">
+      <div class="chips" id="chips"></div>
+      <label class="search" id="search">
+        <input id="q" type="search" placeholder="Suche: Gin, vegan …" aria-label="Karte durchsuchen" autocomplete="off">
+        <button type="button" id="search-btn" aria-label="Suche öffnen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </label>
+    </div>
+    <div class="progress" id="progress"></div>
+  </nav>
+
+  <p class="hits wrap" id="hits" hidden></p>
+
+  <section class="stage wrap">
+    <div class="strip" id="strip">
+      <article class="panel cover" id="cover">
+        <div class="emblem" aria-hidden="true">K</div>
+        <div>
+          <div class="cafe">Café</div>
+          <h2>Kakadu</h2>
+        </div>
+        <div class="kind">Getränke</div>
+        <div class="meta">Wasserstraße 1 · Offenburg<br>cafe-kakadu.de · @cafekakadu</div>
+        <div class="hint" aria-hidden="true">Scrollen zum Aufklappen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="shade"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="einlagen">
+    <div class="inserts-head">
+      <span class="eyebrow">Lose im Flyer</span>
+      <h2>Die Einlagen</h2>
+      <p>Vier Karten stecken zwischen den Seiten. Beim Weiterscrollen rutschen sie heraus.</p>
+    </div>
+    <div class="inserts" id="inserts"></div>
+  </section>
+
+  <footer class="foot wrap">
+    <span>Entwurf für kakadu.artificery.io · Preise nach der gedruckten Karte, Stand November 2026.</span>
+    <span>Zusatzstoffe und Allergene: siehe Aushang an der Theke.</span>
+    <a href="./">Zurück zur Website</a>
+  </footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var euro = function (p) { return p ? esc(p) : ''; };
+  var CHIP_LABEL = { warm: 'Warm', kalt: 'Kalt', saefte: 'Säfte', biere: 'Biere', wein: 'Wein', longdrinks: 'Longdrinks', spirituosen: 'Spirituosen', cocktails: 'Cocktails', tees: 'Tees', speisen: 'Essen', sommer: 'Sommer' };
+  var ARROW = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  var CLOCK = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var SUN = '<svg class="sun" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><g stroke="#d9a066" stroke-width="3" stroke-linecap="round"><path d="M22 4v7"/><path d="M22 33v7"/><path d="M4 22h7"/><path d="M33 22h7"/><path d="M9.5 9.5l5 5"/><path d="M29.5 29.5l5 5"/><path d="M34.5 9.5l-5 5"/><path d="M14.5 29.5l-5 5"/></g><circle cx="22" cy="22" r="4.5" fill="#d9a066"/></svg>';
+  var INSERT_TITLE = { tees: 'Teekarte', sommer: 'Sommerkarte' };
+
+  /* ---------- Rendern ---------- */
+  function rowHTML(it, n) {
+    var name = '<span class="txt"><b>' + esc(it.name) + '</b>' + (it.detail ? ' <i>' + esc(it.detail) + '</i>' : '') +
+      (it.link ? '<a class="jump" href="#' + it.link + '">' + (INSERT_TITLE[it.link] || 'mehr') + '</a>' : '') + '</span>';
+    var html = '<div class="row' + (it.prices ? '' : (n > 1 ? ' span' : '')) + '" data-s="' + esc([it.name, it.detail, it.tag].join(' ')) + '"><span class="nm">' + name + '<span class="lead"></span></span>';
+    if (it.prices) it.prices.forEach(function (p) { html += '<span class="pr' + (p ? '' : ' x') + '">' + (p ? euro(p) : '–') + '</span>'; });
+    else html += '<span class="pr">' + euro(it.price) + '</span>';
+    return html + '</div>';
+  }
+
+  function panelHTML(p) {
+    var n = p.columns ? p.columns.length : 1;
+    var h = '<article class="panel' + (p.tint === 'sage' ? ' sage' : '') + '" id="' + p.id + '" data-sec style="--n:' + n + '">';
+    h += '<div class="p-head"><h2>' + esc(p.title) + '</h2>' + (p.subtitle ? '<span class="sub">' + esc(p.subtitle) + '</span>' : '') + '</div>';
+    if (p.columns) h += '<div class="cols"><span></span>' + p.columns.map(function (c) { return '<span>' + esc(c) + '</span>'; }).join('') + '</div>';
+    p.groups.forEach(function (g) {
+      h += '<div data-grp>' + (g.label ? '<div class="grp">' + esc(g.label) + '</div>' : '') + g.items.map(function (it) { return rowHTML(it, n); }).join('') + '</div>';
+    });
+    if (p.notes) h += '<ul class="notes">' + p.notes.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+    return h + '<div class="shade"></div></article>';
+  }
+
+  function cocktailHTML(ins) {
+    var h = '<h3>' + esc(ins.title) + '</h3>';
+    ins.sections.forEach(function (s) {
+      h += '<div data-grp>' + (s.title ? '<h3 class="sec-t">' + esc(s.title) + '</h3>' : '');
+      s.items.forEach(function (it) {
+        h += '<div class="row" data-s="' + esc([it.name, it.detail, it.tag, s.title].join(' ')) + '"><span class="nm"><span class="txt"><b>' + esc(it.name) + '</b>' + (it.tag ? ' <span class="tag">(' + esc(it.tag) + ')</span>' : '') + '</span><span class="lead"></span></span><span class="pr">' + euro(it.price) + '</span><span class="ing">' + esc(it.detail) + '</span></div>';
+      });
+      h += '</div>';
+    });
+    return h;
+  }
+
+  function teaHTML(ins) {
+    var h = '<h3>' + esc(ins.title) + '</h3><div class="price-note">Glas <span>3,50</span> / Kanne <span>6,20 €</span></div><div class="tea-grid">';
+    ins.sections.forEach(function (s) {
+      h += '<div data-grp><h4>' + esc(s.title) + '<small class="steep">' + CLOCK + esc(s.subtitle) + '</small></h4><ul>';
+      s.items.forEach(function (it) {
+        h += '<li class="row-t" data-s="' + esc([it.name, it.detail, s.title, it.bio ? 'bio' : '', 'tee'].join(' ')) + '">' + esc(it.name) + (it.bio ? '<span class="bio">Bio</span>' : '') + (it.detail ? '<small>' + esc(it.detail) + '</small>' : '') + '</li>';
+      });
+      h += '</ul></div>';
+    });
+    return h + '</div>';
+  }
+
+  function dishList(items, cls) {
+    return items.map(function (it) {
+      return '<div class="dish ' + (cls || '') + '" data-s="' + esc([it.name, it.detail, it.tag].join(' ')) + '"><b>' + esc(it.name) + '</b>' +
+        (it.tag === 'vegan' ? '<span class="vg">vegan</span>' : '') + (it.price ? '<span class="pr">' + euro(it.price) + ' €</span>' : '') +
+        (it.detail ? '<small>' + esc(it.detail) + '</small>' : '') + '</div>';
+    }).join('');
+  }
+
+  function foodHTML(ins) {
+    var h = '';
+    ins.sections.forEach(function (s, i) { h += '<div data-grp><h3 class="' + (i ? 'sec-t' : '') + '">' + esc(s.title) + '</h3>' + dishList(s.items) + '</div>'; });
+    h += '<div class="sep" aria-hidden="true">·•·</div>';
+    if (ins.notes) h += '<ul class="notes">' + ins.notes.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+    return h;
+  }
+
+  function summerHTML(ins) {
+    var h = SUN;
+    ins.sections.forEach(function (s) {
+      if (s.title === 'Drinks') {
+        var word = ''; for (var k = 0; k < 16; k++) word += (k % 2 ? '<i>DRINKS</i> ' : 'DRINKS ');
+        h += '<div class="marquee" aria-hidden="true"><span>' + word + word + '</span></div><div class="drinks" data-grp>' + dishList(s.items) + '</div>';
+      } else {
+        h += '<div data-grp><h3 class="sec-t">' + esc(s.title) + '</h3>' + dishList(s.items, s.title.indexOf('Limo') > -1 ? 'limo' : '') + '</div>';
+      }
+    });
+    return h;
+  }
+
+  function insertHTML(ins, i) {
+    var body = { cocktail: cocktailHTML, tea: teaHTML, food: foodHTML, summer: summerHTML }[ins.theme](ins);
+    return '<article class="card ' + ins.theme + '" id="' + ins.id + '" data-sec data-side="' + (i % 2 ? 1 : -1) + '">' + body + '</article>';
+  }
+
+  function build(data) {
+    var strip = document.getElementById('strip');
+    strip.insertAdjacentHTML('beforeend', data.flyer.map(panelHTML).join(''));
+    document.getElementById('inserts').innerHTML = data.inserts.map(insertHTML).join('');
+
+    var chips = document.getElementById('chips');
+    var all = data.flyer.concat([null], data.inserts);
+    chips.innerHTML = all.map(function (s) {
+      return s ? '<a class="chip" href="#' + s.id + '" data-for="' + s.id + '">' + esc(CHIP_LABEL[s.id] || s.title) + '</a>' : '<span class="chip-sep" aria-hidden="true"></span>';
+    }).join('');
+    initMotion();
+    initSearch();
+  }
+
+  /* ---------- Bewegung: Seiten falten sich beim Scrollen auf ---------- */
+  function initMotion() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var panels = [].slice.call(document.querySelectorAll('.panel'));
+    var cards = [].slice.call(document.querySelectorAll('.card'));
+    var secs = [].slice.call(document.querySelectorAll('[data-sec]'));
+    var chipEls = {}; [].forEach.call(document.querySelectorAll('.chip'), function (c) { chipEls[c.dataset.for] = c; });
+    var bar = document.getElementById('progress');
+    var strip = document.getElementById('strip');
+    var lastActive = null, ticking = false;
+    var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+    var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+
+    function frame() {
+      ticking = false;
+      var vh = window.innerHeight;
+      if (!reduce) {
+        panels.forEach(function (el, i) {
+          if (i === 0) return;
+          var top = el.getBoundingClientRect().top;
+          var p = ease(clamp((vh - top) / (vh * 0.55)));
+          var dir = i % 2 ? 1 : -1;               /* Berg- und Talfalz im Wechsel */
+          var ang = (1 - p) * 78 * dir;
+          el.style.transform = p >= 1 ? 'none' : 'perspective(1300px) rotateX(' + ang.toFixed(2) + 'deg)';
+          el.querySelector('.shade').style.opacity = ((1 - p) * (dir > 0 ? 0.9 : 0.45)).toFixed(3);
+        });
+        cards.forEach(function (el) {
+          var top = el.getBoundingClientRect().top;
+          var p = ease(clamp((vh - top) / (vh * 0.6)));
+          var side = +el.dataset.side;
+          var tx = (1 - p) * 55 * side, rot = (1 - p) * 9 * side + side * 0.7;
+          el.style.transform = 'translateX(' + tx.toFixed(2) + '%) rotate(' + rot.toFixed(2) + 'deg)';
+        });
+      }
+      /* Fortschritt über die ganze Karte */
+      var first = strip.getBoundingClientRect().top + window.scrollY;
+      var last = document.getElementById('inserts').getBoundingClientRect().bottom + window.scrollY - vh;
+      bar.style.transform = 'scaleX(' + clamp((window.scrollY - first + vh * 0.3) / (last - first)).toFixed(4) + ')';
+      /* aktives Kapitel */
+      var active = null;
+      for (var i = 0; i < secs.length; i++) {
+        if (secs[i].offsetParent === null) continue;
+        if (secs[i].getBoundingClientRect().top < vh * 0.42) active = secs[i].id; else break;
+      }
+      if (active !== lastActive) {
+        if (lastActive && chipEls[lastActive]) chipEls[lastActive].classList.remove('on');
+        if (active && chipEls[active]) {
+          var c = chipEls[active]; c.classList.add('on');
+          var box = c.parentNode; box.scrollLeft = c.offsetLeft - box.clientWidth / 2 + c.offsetWidth / 2;
+        }
+        lastActive = active;
+      }
+    }
+    function req() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    frame();
+    window.__kakaduFrame = req;
+  }
+
+  /* ---------- Suche ---------- */
+  function initSearch() {
+    var box = document.getElementById('search'), q = document.getElementById('q'), btn = document.getElementById('search-btn'), hits = document.getElementById('hits');
+    var norm = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss'); };
+    var rows = [].slice.call(document.querySelectorAll('[data-s]'));
+    rows.forEach(function (r) { r._s = norm(r.dataset.s); });
+    btn.addEventListener('click', function () {
+      if (box.classList.contains('open') && q.value) { q.value = ''; run(); }
+      box.classList.toggle('open', !box.classList.contains('open') || !!q.value);
+      if (box.classList.contains('open')) q.focus();
+    });
+    q.addEventListener('focus', function () { box.classList.add('open'); });
+    q.addEventListener('blur', function () { if (!q.value) box.classList.remove('open'); });
+    q.addEventListener('input', run);
+    q.addEventListener('keydown', function (e) { if (e.key === 'Escape') { q.value = ''; run(); q.blur(); } });
+
+    function run() {
+      var t = norm(q.value.trim()), count = 0;
+      rows.forEach(function (r) { var m = !t || r._s.indexOf(t) > -1; r.dataset.hidden = m ? '' : '1'; if (t && m) count++; });
+      [].forEach.call(document.querySelectorAll('[data-grp]'), function (g) {
+        g.dataset.hidden = t && !g.querySelector('[data-s]:not([data-hidden="1"])') ? '1' : '';
+      });
+      [].forEach.call(document.querySelectorAll('[data-sec]'), function (s) {
+        s.dataset.hidden = t && !s.querySelector('[data-s]:not([data-hidden="1"])') ? '1' : '';
+        s.querySelectorAll('.notes, .cols, .marquee, .sep').forEach(function (x) { x.dataset.hidden = t ? '1' : ''; });
+      });
+      var cover = document.getElementById('cover'); cover.dataset.hidden = t ? '1' : '';
+      document.querySelectorAll('.chip').forEach(function (c) {
+        var s = document.getElementById(c.dataset.for); c.dataset.hidden = s && s.dataset.hidden === '1' ? '1' : '';
+      });
+      hits.hidden = !t;
+      hits.textContent = count ? count + (count === 1 ? ' Treffer' : ' Treffer') + ' für „' + q.value.trim() + '“' : 'Nichts gefunden für „' + q.value.trim() + '“. Versuch es mit einer Zutat oder Sorte.';
+      if (window.__kakaduFrame) window.__kakaduFrame();
+    }
+  }
+
+  fetch('data/karte.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(build).catch(function () {
+    document.getElementById('strip').insertAdjacentHTML('beforeend', '<article class="panel"><p>Die Karte konnte nicht geladen werden. Bitte Seite neu laden.</p></article>');
+  });
+})();
+</script>
+</body>
+</html>

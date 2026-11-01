@@ -4,6 +4,7 @@ on:
     paths:
       - 'images/gallery/**'
       - 'data/menu.yml'
+      - 'data/karte.yml'
 
 jobs:
   build:
@@ -29,7 +30,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/menu.json data/gallery.json images/gallery/
+          git add data/menu.json data/karte.json data/gallery.json images/gallery/
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

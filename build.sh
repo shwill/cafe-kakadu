@@ -13,6 +13,11 @@ with open('data/menu.yml') as f:
 with open('data/menu.json', 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 print(f'  {len(data)} categories')
+with open('data/karte.yml') as f:
+    karte = yaml.safe_load(f)
+with open('data/karte.json', 'w') as f:
+    json.dump(karte, f, ensure_ascii=False, indent=1)
+print(f'  karte: {len(karte["flyer"])} Flyer-Seiten, {len(karte["inserts"])} Einlagen')
 "
 
 # 2. Convert any jpg/png in gallery to webp
